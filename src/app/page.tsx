@@ -1,103 +1,138 @@
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { motion, AnimatePresence } from "framer-motion";
+// import { greetingsImage } from "@/app/assets";
+import { Button } from "./components/Button";
+import { useSmoothScroll } from "./hooks/useSmoothScroll";
+import { cn } from "./utils/tailwind-merge";
+import { FlippedCard } from "./components/FlippedCard";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const { t } = useTranslation();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  useSmoothScroll();
+
+  const video = "/videos/greetings.mp4";
+
+  return (
+    <main className="flex flex-col">
+      {/* <section
+        className="h-screen w-full bg-cover bg-center relative"
+        style={{ backgroundImage: `url(${greetingsImage.src})` }}
+      > */}
+
+      <section className="h-screen w-full bg-cover bg-center relative overflow-hidden">
+        <video
+          loop
+          muted
+          autoPlay
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-[-2]"
+        >
+          <source src={video} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        <div className="absolute inset-0 bg-black/50 z-[-1]" />
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="h-screen w-full bg-cover bg-center relative flex flex-col items-center justify-center text-center"
+        >
+          <div className="flex justify-center">
+            {["C", "r", "e", "w", "\u00A0", "H", "e", "l", "p", "e", "r"].map(
+              (letter, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ y: 0 }}
+                  animate={{ y: 0 }}
+                  whileHover={{ y: -10 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="text-[80px] font-bold text-white cursor-default inline-block"
+                >
+                  {letter}
+                </motion.span>
+              )
+            )}
+          </div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 1 }}
+            className="text-lg md:text-3xl max-w-2xl mt-8 text-white"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+            {t("home.about")}
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 1 }}
+          >
+            <Button
+              text={t("home.consult")}
+              onClick={() => setIsModalOpen(true)}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </motion.div>
+        </motion.div>
+
+        <AnimatePresence>
+          {isModalOpen && (
+            <motion.div
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              onClick={() => setIsModalOpen(false)}
+              className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50"
+            >
+              <motion.div
+                exit={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                initial={{ opacity: 0, y: 20 }}
+                onClick={(e) => e.stopPropagation()}
+                className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md text-black relative"
+              >
+                <h2 className="text-2xl font-bold mb-4">Залиште заявку</h2>
+
+                <p className="mb-4">Скоро тут буде форма 📱</p>
+
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
+                >
+                  Закрити
+                </button>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </section>
+
+      {/* Інші секції */}
+      <section
+        className={cn(
+          "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-8 bg-white"
+        )}
+      >
+        <div className="w-[450px] h-[600px] mx-auto">
+          <FlippedCard frontSideText="frontSideText" backSideText="backSideText" />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="w-[450px] h-[600px] mx-auto">
+          <FlippedCard frontSideText="frontSideText" backSideText="backSideText" />
+        </div>
+        <div className="w-[450px] h-[600px] mx-auto">
+          <FlippedCard frontSideText="frontSideText" backSideText="backSideText" />
+        </div>
+        <div className="w-[450px] h-[600px] mx-auto">
+          <FlippedCard frontSideText="frontSideText" backSideText="backSideText" />
+        </div>
+      </section>
+    </main>
   );
 }
