@@ -8,6 +8,7 @@ import { Button } from "./components/Button";
 import { useSmoothScroll } from "./hooks/useSmoothScroll";
 import { cn } from "./utils/tailwind-merge";
 import { FlippedCard } from "./components/FlippedCard";
+import { Window, Girl } from "./assets";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -116,21 +117,37 @@ export default function Home() {
 
       {/* Інші секції */}
       <section
-        className={cn(
-          "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-8 bg-white"
-        )}
+        className={cn("px-8 my-[50px] mb-[500px] pr-[calc(100vw-100%)] w-full")}
       >
-        <div className="w-[450px] h-[600px] mx-auto">
-          <FlippedCard frontSideText="frontSideText" backSideText="backSideText" />
-        </div>
-        <div className="w-[450px] h-[600px] mx-auto">
-          <FlippedCard frontSideText="frontSideText" backSideText="backSideText" />
-        </div>
-        <div className="w-[450px] h-[600px] mx-auto">
-          <FlippedCard frontSideText="frontSideText" backSideText="backSideText" />
-        </div>
-        <div className="w-[450px] h-[600px] mx-auto">
-          <FlippedCard frontSideText="frontSideText" backSideText="backSideText" />
+        <div className={cn("flex gap-4 overflow-x-auto bg-pidlozhka p-5 rounded-sm")}>
+          <FlippedCard
+            backBg={Girl}
+            frontBg={Window}
+            className="w-[450px] h-[500px] flex-shrink-0 rounded-2xl last:mr-[calc(100vw-100%)]"
+            frontContent={<div>Передній контент</div>}
+            backContent={<div>Зворотній контент</div>}
+          />
+          <FlippedCard
+            backBg={Window}
+            frontBg={Girl}
+            className="w-[450px] h-[500px] flex-shrink-0 rounded-2xl last:mr-[calc(100vw-100%)]"
+            frontContent={<div>Передній контент</div>}
+            backContent={<div>Зворотній контент</div>}
+          />
+          <FlippedCard
+            backBg={Girl}
+            frontBg={Window}
+            className="w-[450px] h-[500px] flex-shrink-0 rounded-2xl last:mr-[calc(100vw-100%)]"
+            frontContent={<div>Передній контент</div>}
+            backContent={<div>Зворотній контент</div>}
+          />
+          <FlippedCard
+            backBg={Window}
+            frontBg={Girl}
+            className="w-[450px] h-[500px] flex-shrink-0 rounded-2xl last:mr-[calc(100vw-100%)]"
+            frontContent={<div>Передній контент</div>}
+            backContent={<div>Зворотній контент</div>}
+          />
         </div>
       </section>
     </main>

@@ -5,11 +5,11 @@
 
 @theme {
   --color-main-text: #ffffff;
-  --color-section-bg: #ffffff;
+  --color-section-bg: #1a1e23;
   --color-main-dark-text: #171717;
   --color-background: #ffffff;
   --color-foreground: #171717;
-  --color-header: #9e9ee2;
+  --color-header: #1a1e23;
   --color-button-text: #171717;
   /* --color-button-signin: #0056d2;
   --color-button-signin-hover: #0047b2;
@@ -17,12 +17,12 @@
   --color-button-signin: #9e9ee2;
   --color-button-signin-hover: #c1982b;
   --color-button-signin-active: #a97f1f;
-  --color-footer: #9e9ee2;
+  --color-footer: #1a1e23;
   --color-footer-text: #ffffff;
   --color-menu-text: #ffffff;
-  --color-menu: #1a436b;
+  --color-menu: #1a1e23;
   --color-flipped-card-bg: #f0f8ff;
-  --color-pidlozhka: grey;
+  --color-pidlozhka: #ffffff;
 
   --color-scrollbar: #0056d2;
   --color-scrollbar-hover: #0047b2;
@@ -41,7 +41,7 @@ body {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  /* width: 8px; */
 }
 
 ::-webkit-scrollbar-track {
@@ -49,11 +49,11 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--color-scrollbar);
+  /* background-color: var(--color-scrollbar); */
   border-radius: 4px;
   transition: background-color 0.2s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--color-scrollbar-hover);
+  /* background-color: var(--color-scrollbar-hover); */
 }

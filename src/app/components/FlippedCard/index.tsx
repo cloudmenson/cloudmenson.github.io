@@ -1,71 +1,63 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { cn } from "@/app/utils/tailwind-merge";
 
 interface IFlippedCard {
-  backSideText: string;
-  frontSideText: string;
+  frontContent: React.ReactNode;
+  backContent: React.ReactNode;
+  frontBg: StaticImageData;
+  backBg: StaticImageData;
+  className?: string;
 }
 
-import { Window } from "@/app/assets";
-
-export const FlippedCard = ({ frontSideText, backSideText }: IFlippedCard) => {
+export const FlippedCard = ({
+  frontContent,
+  backContent,
+  frontBg,
+  backBg,
+  className,
+}: IFlippedCard) => {
   const [flipped, setFlipped] = useState(false);
 
   return (
-    <motion.div
-      className="relative w-full h-full perspective-1000"
-      onClick={() => setFlipped(!flipped)} // Flip on click
+    <div
+      onClick={() => setFlipped((prev) => !prev)}
+      className={cn("relative w-full h-full [perspective:1000px]", className)}
     >
-      {/* Flipping container */}
       <motion.div
-        className="relative w-full h-full transform-style-preserve-3d"
-        animate={{
-          rotateY: flipped ? 180 : 0, // Rotate 180 degrees when flipped
-        }}
-        transition={{ duration: 0.4, ease: "easeInOut" }}
+        className="relative w-full h-full [transform-style:preserve-3d]"
+        animate={{ rotateY: flipped ? 180 : 0 }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
       >
-        {/* Front Side */}
-        <motion.div
-          className={cn(
-            "absolute inset-0 flex items-center justify-center text-white rounded-lg shadow-lg backface-hidden"
-          )}
-          initial={{ opacity: 1 }}
-          animate={{ opacity: flipped ? 0 : 1 }}
-          transition={{ duration: 0.4 }}
-        >
+        {/* Передня сторона */}
+        <div className="absolute inset-0 rounded-lg shadow-lg [backface-visibility:hidden]">
           <Image
-            src={Window}
-            alt="Bg"
+            src={frontBg}
+            alt="Front background"
             layout="fill"
             objectFit="cover"
-            className="rounded-lg absolute inset-0"
+            className="rounded-lg"
           />
+          <div className="absolute inset-0 flex items-center justify-center">
+            {frontContent}
+          </div>
+        </div>
 
-          <p className="z-10">{frontSideText}</p>
-        </motion.div>
-
-        {/* Back Side */}
-        <motion.div
-          className={cn(
-            "absolute inset-0 flex items-center justify-center text-white rounded-lg shadow-lg backface-hidden rotate-y-180"
-          )}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: flipped ? 1 : 0 }}
-          transition={{ duration: 0.4 }}
-        >
+        {/* Зворотня сторона */}
+        <div className="absolute inset-0 rounded-lg shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]">
           <Image
-            src={Window}
-            alt="Bg"
+            src={backBg}
+            alt="Back background"
             layout="fill"
             objectFit="cover"
-            className="rounded-lg absolute inset-0"
+            className="rounded-lg"
           />
-
-          <p className="z-10">{backSideText}</p>
-        </motion.div>
+          <div className="absolute inset-0 flex items-center justify-center">
+            {backContent}
+          </div>
+        </div>
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
