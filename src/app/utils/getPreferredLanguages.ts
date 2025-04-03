@@ -1,3 +1,5 @@
+"use-client";
+
 import { DEFAULT_LANG } from "@/app/constants";
 
 const detectBrowserLanguage = () => {
