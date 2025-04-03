@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
 
@@ -17,18 +15,22 @@ export const LanguageSwitcher = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const stored = localStorage.getItem("selected-language");
-    if (stored) {
-      setCurrentLang(stored);
-      i18n.changeLanguage(stored);
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("selected-language");
+      if (stored) {
+        setCurrentLang(stored);
+        i18n.changeLanguage(stored);
+      }
     }
   }, []);
 
   const handleChange = (lang: string) => {
-    localStorage.setItem("selected-language", lang);
-    i18n.changeLanguage(lang);
-    setCurrentLang(lang);
-    setOpen(false);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("selected-language", lang);
+      i18n.changeLanguage(lang);
+      setCurrentLang(lang);
+      setOpen(false);
+    }
   };
 
   useEffect(() => {

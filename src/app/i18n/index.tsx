@@ -7,7 +7,10 @@ import { uk as ukTranslation } from "@/app/i18n/translations/uk";
 import { en as enTranslation } from "@/app/i18n/translations/en";
 
 export const defaultLang = "en";
-const currentLang = localStorage.getItem("selected-language") || defaultLang;
+const currentLang =
+  typeof window !== "undefined"
+    ? localStorage.getItem("selected-language") || defaultLang
+    : defaultLang;
 
 const resources = {
   en: {
@@ -18,15 +21,17 @@ const resources = {
   },
 };
 
-i18n.use(initReactI18next).init({
-  lng: currentLang,
-  fallbackLng: currentLang,
-  resources,
-  interpolation: {
-    escapeValue: false,
-    prefix: "{{",
-    suffix: "}}",
-  },
-});
+if (typeof window !== "undefined") {
+  i18n.use(initReactI18next).init({
+    lng: currentLang,
+    fallbackLng: currentLang,
+    resources,
+    interpolation: {
+      escapeValue: false,
+      prefix: "{{",
+      suffix: "}}",
+    },
+  });
+}
 
 export default i18n;
