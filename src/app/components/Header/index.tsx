@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { X, MenuIcon } from "lucide-react";
-// import { LanguageSwitcher } from "../LanguageSwitcher";
 import { motion, AnimatePresence } from "framer-motion";
 import { FlyHeader } from "@/app/assets";
 import Image from "next/image";
@@ -34,9 +33,9 @@ export const Header = () => {
         </Link>
 
         <div className="flex items-center gap-3 md:gap-6">
-          <div className="hidden md:block">
-            {/* <LanguageSwitcher /> */}
-          </div>
+          {/* <div className="hidden md:block">
+    
+          </div> */}
 
           <MenuIcon
             className="cursor-pointer"
