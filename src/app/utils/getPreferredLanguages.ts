@@ -1,25 +1,25 @@
-"use-client";
+// "use-client";
 
-import { DEFAULT_LANG } from "@/app/constants";
+// import { DEFAULT_LANG } from "@/app/constants";
 
-const detectBrowserLanguage = () => {
-  const browserLang = navigator.languages || [navigator.language || "en"];
-  return browserLang.map((code) => code.split("-")[0]);
-};
+// const detectBrowserLanguage = () => {
+//   const browserLang = navigator.languages || [navigator.language || "en"];
+//   return browserLang.map((code) => code.split("-")[0]);
+// };
 
-export const getPreferredLanguage = (codes: string[]) => {
-  const browserLang = detectBrowserLanguage();
-  const localStoreLng = localStorage.getItem("selected-language");
+// export const getPreferredLanguage = (codes: string[]) => {
+//   const browserLang = detectBrowserLanguage();
+//   const localStoreLng = localStorage.getItem("selected-language");
 
-  const matchedLng = browserLang.find((lang) => codes.includes(lang));
+//   const matchedLng = browserLang.find((lang) => codes.includes(lang));
 
-  if (localStoreLng && codes.includes(localStoreLng)) {
-    return localStoreLng;
-  }
+//   if (localStoreLng && codes.includes(localStoreLng)) {
+//     return localStoreLng;
+//   }
 
-  if (browserLang && matchedLng) {
-    return matchedLng;
-  }
+//   if (browserLang && matchedLng) {
+//     return matchedLng;
+//   }
 
-  return DEFAULT_LANG;
-};
+//   return DEFAULT_LANG;
+// };
