@@ -1,3 +1,36 @@
+import { Inst, Ksenia, Pavlo, Stanislav, TikTok } from "../assets";
+
+export const mentors = [
+  {
+    name: "Stanislav",
+    photo: Stanislav,
+    socials: [
+      { link: "#", icon: Inst },
+      { link: "#", icon: TikTok },
+    ],
+    description:
+      "I’m Stan — a people person with a passion for helping and teaching others. My second passion? Aviation. And when you put the two together — it’s the perfect match! I truly believe that anyone can fly — whether your dream is to become a cabin crew member or a pilot. I’ve earned my Private Pilot License and love sharing the skies with my friends and family. In our session, I’ll give you real insights, honest advice, and a fresh perspective from someone who’s been through it. Let’s take this step together — book your session and let’s make it happen!",
+  },
+  {
+    name: "Ksenia",
+    photo: Ksenia,
+    socials: [
+      { link: "#", icon: Inst },
+      { link: "#", icon: TikTok },
+    ],
+    description: "Test",
+  },
+  {
+    name: "Pavlo",
+    photo: Pavlo,
+    socials: [
+      { link: "#", icon: Inst },
+      { link: "#", icon: TikTok },
+    ],
+    description: "Test",
+  },
+];
+
 export const menuNavigation = [
   { label: "Про нас", href: "#about" },
   { label: "Ментори", href: "#mentors" },

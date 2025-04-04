@@ -3,4 +3,21 @@ import Girl from "./png/3.png";
 import greetingsImage from "./png/greetings.png";
 import Window from "./png/1.jpg";
 
-export { greetingsImage, FlyHeader, Window, Girl };
+import Ksenia from "./png/mentors/Ksenia.jpg";
+import Pavlo from "./png/mentors/Pavlo.jpg";
+import Stanislav from "./png/mentors/Stanislav.jpg";
+
+import Inst from "./svg/socials/inst.svg";
+import TikTok from "./svg/socials/tiktok.svg";
+
+export {
+  FlyHeader,
+  Girl,
+  greetingsImage,
+  Inst,
+  Ksenia,
+  Pavlo,
+  Stanislav,
+  TikTok,
+  Window,
+};

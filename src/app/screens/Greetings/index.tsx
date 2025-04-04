@@ -1,19 +1,18 @@
-import { useState } from "react";
+import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { motion, AnimatePresence } from "framer-motion";
 
 import { Button } from "@/app/components/Button";
+import { useModalStore } from "@/app/store/modalStore";
 
 export const Greetings = ({}) => {
+  const { open } = useModalStore();
   const { t } = useTranslation();
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // const video = "/videos/greetings.mp4";
+  const video = "/videos/greetings.mp4";
 
   return (
     <section className="h-screen w-full bg-cover bg-center relative overflow-hidden">
-      {/* <video
+      <video
         loop
         muted
         autoPlay
@@ -22,7 +21,7 @@ export const Greetings = ({}) => {
       >
         <source src={video} type="video/mp4" />
         Your browser does not support the video tag.
-      </video> */}
+      </video>
 
       <div className="absolute inset-0 bg-black/50 z-[-1]" />
 
@@ -63,43 +62,9 @@ export const Greetings = ({}) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 1 }}
         >
-          <Button
-            text={t("home.consult")}
-            onClick={() => setIsModalOpen(true)}
-          />
+          <Button text={t("home.consult")} onClick={open} />
         </motion.div>
       </motion.div>
-
-      <AnimatePresence>
-        {isModalOpen && (
-          <motion.div
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            onClick={() => setIsModalOpen(false)}
-            className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50"
-          >
-            <motion.div
-              exit={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-              initial={{ opacity: 0, y: 20 }}
-              onClick={(e) => e.stopPropagation()}
-              className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md text-black relative"
-            >
-              <h2 className="text-2xl font-bold mb-4">Залиште заявку</h2>
-
-              <p className="mb-4">Скоро тут буде форма 📱</p>
-
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
-              >
-                Закрити
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 };

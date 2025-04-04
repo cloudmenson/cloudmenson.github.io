@@ -1,7 +1,10 @@
+import { useModalStore } from "@/app/store/modalStore";
 import { motion } from "framer-motion";
 import { Clock, UserCheck, PenLine } from "lucide-react";
 
 export const Course = () => {
+  const { open } = useModalStore();
+
   return (
     <section className="py-[5vw] px-[2vw] bg-section-bg text-section-text">
       <div className="max-w-[90vw] mx-auto">
@@ -11,12 +14,13 @@ export const Course = () => {
 
         <div className="flex flex-col md:flex-row gap-[2vw]">
           {/* Картка 1 */}
+
           <motion.div
             viewport={{ once: true }}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="relative flex-1 p-[2vw] border border-white/20 rounded-xl bg-white/10 backdrop-blur-md shadow-md hover:shadow-xl transition-all text-white overflow-hidden"
+            className="relative flex-1 p-[2vw] mt-[2vw] border border-white/20 rounded-xl bg-white/10 backdrop-blur-md shadow-md hover:shadow-xl transition-all text-white overflow-hidden"
           >
             <div className="absolute top-0 left-0 w-full h-[0.3vw] bg-gradient-to-r from-blue-400 to-cyan-400" />
 
@@ -44,6 +48,7 @@ export const Course = () => {
               </p>
 
               <motion.button
+                onClick={open}
                 whileTap={{ scale: 0.98 }}
                 whileHover={{ scale: 1.02 }}
                 className="text-[1vw] px-[2vw] py-[0.8vw] cursor-pointer rounded-full bg-gradient-to-r from-blue-400 to-cyan-400 text-white font-semibold hover:bg-gray-200 transition-colors"
@@ -59,7 +64,7 @@ export const Course = () => {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-            className="relative flex-1 p-[2vw] md:pt-[2.5vw] md:pb-[2.5vw] border border-white/20 rounded-xl bg-white/10 backdrop-blur-md shadow-md hover:shadow-xl transition-all text-white overflow-hidden transform md:scale-[1.05] z-10"
+            className="relative flex-1 p-[2vw] md:pt-[2.5vw] md:pb-[2.5vw]  border border-white/20 rounded-xl bg-white/10 backdrop-blur-md shadow-md hover:shadow-xl transition-all text-white overflow-hidden z-10"
           >
             <div className="absolute top-0 left-0 w-full h-[0.3vw] bg-gradient-to-r from-purple-400 to-pink-400" />
 
@@ -95,6 +100,7 @@ export const Course = () => {
               </p>
 
               <motion.button
+                onClick={open}
                 whileTap={{ scale: 0.98 }}
                 whileHover={{ scale: 1.02 }}
                 className="px-[2vw] py-[0.8vw] cursor-pointer rounded-full bg-gradient-to-r from-purple-400 to-pink-400 text-white font-semibold hover:bg-gray-200 transition-colors text-[1vw]"
@@ -110,7 +116,7 @@ export const Course = () => {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
-            className="relative flex-1 p-[2vw] border border-white/20 rounded-xl bg-white/10 backdrop-blur-md shadow-md hover:shadow-xl transition-all text-white overflow-hidden"
+            className="relative flex-1 p-[2vw] mt-[2vw] border border-white/20 rounded-xl bg-white/10 backdrop-blur-md shadow-md hover:shadow-xl transition-all text-white overflow-hidden"
           >
             <div className="absolute top-0 left-0 w-full h-[0.3vw] bg-gradient-to-r from-yellow-400 to-orange-400" />
 
@@ -132,6 +138,7 @@ export const Course = () => {
               </p>
 
               <motion.button
+                onClick={open}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="text-[1vw] px-[2vw] py-[0.8vw] cursor-pointer rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 text-white font-semibold hover:bg-gray-200 transition-colors"

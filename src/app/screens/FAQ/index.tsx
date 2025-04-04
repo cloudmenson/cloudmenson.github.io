@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 
-import { questions } from "@/app/utils/navigation";
+import { questions } from "@/app/utils/mock";
 
 export const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -15,11 +15,11 @@ export const FAQ = () => {
 
   return (
     <motion.section
-      className="max-w-[70%] w-full py-[5vw] px-[2vw] mx-auto text-section-text"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
+      className="max-w-[70%] w-full py-[5vw] px-[2vw] mx-auto text-section-text"
     >
       <h2 className="text-[2vw] font-bold text-center mb-[3vw]">
         Поширені питання

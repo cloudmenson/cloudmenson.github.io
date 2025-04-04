@@ -8,7 +8,7 @@ import { FlyHeader } from "@/app/assets";
 import Image from "next/image";
 import { cn } from "@/app/utils/tailwind-merge";
 import { LangSelector } from "@/app/components";
-import { menuNavigation } from "@/app/utils/navigation";
+import { menuNavigation } from "@/app/utils/mock";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
