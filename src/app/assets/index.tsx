@@ -3,10 +3,12 @@ import Girl from "./png/3.png";
 import greetingsImage from "./png/greetings.png";
 import Window from "./png/1.jpg";
 
+// mentors
 import Ksenia from "./png/mentors/Ksenia.jpg";
 import Pavlo from "./png/mentors/Pavlo.jpg";
 import Stanislav from "./png/mentors/Stanislav.jpg";
 
+// social
 import Inst from "./svg/socials/inst.svg";
 import TikTok from "./svg/socials/tiktok.svg";
 
