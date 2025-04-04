@@ -24,6 +24,9 @@
 
   --color-scrollbar: #0056d2;
   --color-scrollbar-hover: #0047b2;
+
+  /* course */
+  --color-section-text: #ffffff; 
 }
 
 html {
@@ -31,10 +34,11 @@ html {
 }
 
 body {
-  background: var(--color-foreground);
+  background: var(--color-section-bg);
   color: var(--color-main-text);
   overscroll-behavior: none;
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 
 .custom-scroll::-webkit-scrollbar {

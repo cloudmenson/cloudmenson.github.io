@@ -12,8 +12,8 @@ export const Button = ({ text, onClick }: IButton) => {
     <button
       onClick={onClick}
       className={cn(
-        "px-6",
-        "py-3",
+        "px-[0.8vw]",
+        "py-[0.6vw]",
         "relative",
         "mt-[3vw] ",
         "shadow-md ",

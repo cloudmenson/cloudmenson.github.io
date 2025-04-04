@@ -26,9 +26,11 @@ export const LangSelector = () => {
       <motion.button
         onClick={() => setOpen(!open)}
         whileTap={{ scale: 0.95 }}
-        className="px-4 py-2 bg-transparent border w-[150px] border-gray-300 rounded-[5px] shadow hover:scale-98 active:scale-96 transition cursor-pointer"
+        className="p-[0.4vw] bg-transparent border w-[8vw] border-gray-300 rounded-[0.4vw] shadow hover:scale-98 active:scale-96 transition cursor-pointer"
       >
-        {languageConfig[i18n.language]?.label ?? i18n.language}
+        <p className="text-[0.8vw]">
+          {languageConfig[i18n.language]?.label ?? i18n.language}
+        </p>
       </motion.button>
 
       <AnimatePresence>
@@ -43,7 +45,7 @@ export const LangSelector = () => {
               <li key={key}>
                 <button
                   onClick={() => handleSelect(key as string)}
-                  className={`flex flex-row items-center w-full px-4 py-2 text-left transition cursor-pointer
+                  className={`flex flex-row items-center w-full px-[0.5vw] py-[0.4vw] text-left transition cursor-pointer
                     ${
                       i18n.language === key
                         ? "bg-gray-200 font-semibold text-gray-800"
@@ -51,7 +53,7 @@ export const LangSelector = () => {
                     }
                     hover:bg-gray-100`}
                 >
-                  <p className="mr-2 w-fit-content">{label}</p>
+                  <p className="mr-2 w-fit-content text-[0.8vw]">{label}</p>
 
                   {icon}
                 </button>
