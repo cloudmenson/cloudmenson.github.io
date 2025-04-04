@@ -36,7 +36,9 @@ export default function RootLayout({
               "text-footer-text"
             )}
           >
-            © {new Date().getFullYear()} Crew Helper
+            <p className="text-[1vw]">
+              © {new Date().getFullYear()} Crew Helper
+            </p>
           </footer>
         </I18nProvider>
       </body>

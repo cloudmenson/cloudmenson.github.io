@@ -14,8 +14,14 @@ export const FAQ = () => {
   };
 
   return (
-    <section className="max-w-[70%] w-full py-[5vw] px-[2vw] mx-auto text-section-text">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-[2vw]">
+    <motion.section
+      className="max-w-[70%] w-full py-[5vw] px-[2vw] mx-auto text-section-text"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <h2 className="text-[2vw] font-bold text-center mb-[3vw]">
         Поширені питання
       </h2>
 
@@ -23,8 +29,11 @@ export const FAQ = () => {
         {questions.map((item, index) => {
           const isOpen = openIndex === index;
           return (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
               className="border border-white/20 rounded-lg overflow-hidden transition-all duration-300 bg-white/5 hover:bg-white/10"
             >
               <button
@@ -57,10 +66,10 @@ export const FAQ = () => {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </div>
+            </motion.div>
           );
         })}
       </div>
-    </section>
+    </motion.section>
   );
 };
