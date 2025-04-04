@@ -16,7 +16,7 @@ export const Course = () => {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="relative flex-1 p-[2vw] border border-white/20 rounded-xl bg-white/10 backdrop-blur-md shadow-md hover:shadow-xl  transition-all text-white overflow-hidden"
+            className="relative flex-1 p-[2vw] border border-white/20 rounded-xl bg-white/10 backdrop-blur-md shadow-md hover:shadow-xl transition-all text-white overflow-hidden"
           >
             <div className="absolute top-0 left-0 w-full h-[0.3vw] bg-gradient-to-r from-blue-400 to-cyan-400" />
 
@@ -26,19 +26,30 @@ export const Course = () => {
               </div>
 
               <h3 className="text-[1.5vw] font-semibold mb-[1vw] text-white">
-                Базовий курс
+                Basic
               </h3>
 
-              <p className="text-[1vw] leading-relaxed">
-                Навчитесь основам професії бортпровідника: безпека, етика,
-                базові ситуації, комунікація з пасажирами.
+              <ul className="text-[1vw] leading-relaxed list-disc list-inside space-y-[0.5vw] mb-[1vw]">
+                <li>
+                  1.5-hour personal session with one of our mentors, including a
+                  full personal evaluation.
+                </li>
+                <li>Free guidebook.</li>
+                <li>Access to the Learning Hub.</li>
+                <li>2 role-play simulations.</li>
+              </ul>
+
+              <p className="text-[2vw] font-bold text-blue-300 mb-[1vw] mt-auto">
+                $45
               </p>
 
-              <p className="text-[2vw] font-bold text-blue-300 mt-auto">$45</p>
-
-              <button className="mt-[1vw] h-[3.2vw] px-[2vw] rounded-full bg-gradient-to-r from-blue-400 to-cyan-400 text-white font-semibold shadow-md hover:shadow-lg hover:brightness-110 active:translate-y-[1px] transition-all">
-                Записатись
-              </button>
+              <motion.button
+                whileTap={{ scale: 0.98 }}
+                whileHover={{ scale: 1.02 }}
+                className="text-[1vw] px-[2vw] py-[0.8vw] cursor-pointer rounded-full bg-gradient-to-r from-blue-400 to-cyan-400 text-white font-semibold hover:bg-gray-200 transition-colors"
+              >
+                Get Basic
+              </motion.button>
             </div>
           </motion.div>
 
@@ -48,7 +59,7 @@ export const Course = () => {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-            className="relative flex-1 p-[2vw] md:pt-[2.5vw] md:pb-[2.5vw] border border-white/20 rounded-xl bg-white/10 backdrop-blur-md shadow-md hover:shadow-xl  transition-all text-white overflow-hidden transform md:scale-[1.05] z-10"
+            className="relative flex-1 p-[2vw] md:pt-[2.5vw] md:pb-[2.5vw] border border-white/20 rounded-xl bg-white/10 backdrop-blur-md shadow-md hover:shadow-xl transition-all text-white overflow-hidden transform md:scale-[1.05] z-10"
           >
             <div className="absolute top-0 left-0 w-full h-[0.3vw] bg-gradient-to-r from-purple-400 to-pink-400" />
 
@@ -58,28 +69,46 @@ export const Course = () => {
               </div>
 
               <h3 className="text-[1.5vw] font-semibold mb-[1vw] text-white">
-                Продвинутий курс
+                Aviator
               </h3>
 
-              <p className="text-[1vw] leading-relaxed">
-                Отримайте особистого наставника, індивідуальний розбір,
-                підготовку до співбесіди, та підтримку під час перших етапів
-                кар’єри.
+              <ul className="text-[1vw] leading-relaxed list-disc list-inside space-y-[0.5vw] mb-[1vw]">
+                <li>
+                  2-hour personal session with one of our mentors, including a
+                  full personal evaluation.
+                </li>
+                <li>Free guidebook.</li>
+                <li>Access to the Learning Hub.</li>
+                <li>
+                  24/7 mentorship support throughout your preparation process.
+                </li>
+                <li>5 role-play simulations.</li>
+                <li>
+                  Personalized guidance on choosing the right outfit for your
+                  interview — feel confident and professional.
+                </li>
+                <li>Craft your cabin crew CV to achieve your goal.</li>
+              </ul>
+
+              <p className="text-[2vw] font-bold text-pink-300 mb-[1vw] mt-auto">
+                $75
               </p>
 
-              <p className="text-[2vw] font-bold text-pink-300 mt-auto">$75</p>
-
-              <button className="mt-[1vw] h-[3.2vw] px-[2vw] rounded-full bg-gradient-to-r from-purple-400 to-pink-400 text-white font-semibold shadow-md hover:shadow-lg hover:brightness-110 active:translate-y-[1px] transition-all">
-                Записатись
-              </button>
+              <motion.button
+                whileTap={{ scale: 0.98 }}
+                whileHover={{ scale: 1.02 }}
+                className="px-[2vw] py-[0.8vw] cursor-pointer rounded-full bg-gradient-to-r from-purple-400 to-pink-400 text-white font-semibold hover:bg-gray-200 transition-colors text-[1vw]"
+              >
+                Get Aviator
+              </motion.button>
             </div>
           </motion.div>
 
           {/* Картка 3 */}
           <motion.div
+            viewport={{ once: true }}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
             className="relative flex-1 p-[2vw] border border-white/20 rounded-xl bg-white/10 backdrop-blur-md shadow-md hover:shadow-xl transition-all text-white overflow-hidden"
           >
@@ -91,21 +120,24 @@ export const Course = () => {
               </div>
 
               <h3 className="text-[1.5vw] font-semibold mb-[1vw] text-white">
-                Craft your CV to achieve your goal
+                Craft your CV
               </h3>
 
               <p className="text-[1vw] leading-relaxed">
-                Індивідуальна робота над резюме, яке виділить вас серед інших
-                кандидатів. Практичні поради, структура та приклади.
+                Craft the perfect cabin crew CV to help you reach your goal.
               </p>
 
-              <p className="text-[2vw] font-bold text-yellow-300 mt-auto">
+              <p className="text-[2vw] font-bold text-yellow-300 mb-[1vw] mt-auto">
                 $19.90
               </p>
 
-              <button className="mt-[1vw] h-[3.2vw] px-[2vw] rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 text-white font-semibold shadow-md hover:shadow-lg hover:brightness-110 active:translate-y-[1px] transition-all">
-                Записатись
-              </button>
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="text-[1vw] px-[2vw] py-[0.8vw] cursor-pointer rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 text-white font-semibold hover:bg-gray-200 transition-colors"
+              >
+                Get Coaching
+              </motion.button>
             </div>
           </motion.div>
         </div>

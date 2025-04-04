@@ -1,6 +1,6 @@
 "use client";
 
-import { Benefits, Course, Greetings } from "./screens";
+import { Benefits, Course, FAQ, Greetings } from "./screens";
 
 export default function Home() {
   return (
@@ -10,6 +10,8 @@ export default function Home() {
       <Benefits />
 
       <Course />
+
+      <FAQ />
     </main>
   );
 }
