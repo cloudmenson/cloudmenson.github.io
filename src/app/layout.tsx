@@ -36,7 +36,7 @@ export default function RootLayout({
               "text-footer-text"
             )}
           >
-            © {new Date().getFullYear()} Crew Helper. Всі права захищено.
+            © {new Date().getFullYear()} Crew Helper
           </footer>
         </I18nProvider>
       </body>
