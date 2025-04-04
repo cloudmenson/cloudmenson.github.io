@@ -9,11 +9,11 @@ export const Greetings = ({}) => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const video = "/videos/greetings.mp4";
+  // const video = "/videos/greetings.mp4";
 
   return (
     <section className="h-screen w-full bg-cover bg-center relative overflow-hidden">
-      <video
+      {/* <video
         loop
         muted
         autoPlay
@@ -22,7 +22,7 @@ export const Greetings = ({}) => {
       >
         <source src={video} type="video/mp4" />
         Your browser does not support the video tag.
-      </video>
+      </video> */}
 
       <div className="absolute inset-0 bg-black/50 z-[-1]" />
 
