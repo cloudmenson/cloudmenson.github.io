@@ -3,28 +3,20 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
-// import { greetingsImage } from "@/app/assets";
-import { Button } from "./components/Button";
-import { useSmoothScroll } from "./hooks/useSmoothScroll";
-import { cn } from "./utils/tailwind-merge";
-import { FlippedCard } from "./components/FlippedCard";
+
 import { Window, Girl } from "./assets";
+import { Button } from "./components/Button";
+import { FlippedCard } from "./components/FlippedCard";
 
 export default function Home() {
   const { t } = useTranslation();
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useSmoothScroll();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const video = "/videos/greetings.mp4";
 
   return (
     <main className="flex flex-col">
-      {/* <section
-        className="h-screen w-full bg-cover bg-center relative"
-        style={{ backgroundImage: `url(${greetingsImage.src})` }}
-      > */}
-
       <section className="h-screen w-full bg-cover bg-center relative overflow-hidden">
         <video
           loop
@@ -54,7 +46,7 @@ export default function Home() {
                   animate={{ y: 0 }}
                   whileHover={{ y: -10 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="text-[80px] font-bold text-white cursor-default inline-block"
+                  className="text-[6vw] font-bold text-white cursor-default inline-block"
                 >
                   {letter}
                 </motion.span>
@@ -63,10 +55,10 @@ export default function Home() {
           </div>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            className="text-[2vw] mt-8 text-white"
             transition={{ delay: 0.3, duration: 1 }}
-            className="text-lg md:text-3xl max-w-2xl mt-8 text-white"
           >
             {t("home.about")}
           </motion.p>
@@ -116,37 +108,120 @@ export default function Home() {
       </section>
 
       {/* Інші секції */}
-      <section
-        className={cn("px-8 my-[50px] mb-[500px] pr-[calc(100vw-100%)] w-full")}
-      >
-        <div className={cn("flex gap-4 overflow-x-auto bg-pidlozhka p-5 rounded-sm")}>
+      <section className="px-8 my-[50px] mb-[33vw] pr-[calc(100vw-100%)] w-full">
+        <div className="flex gap-4 overflow-x-auto overflow-y-hidden p-5 rounded-sm custom-scroll">
           <FlippedCard
             backBg={Girl}
             frontBg={Window}
-            className="w-[450px] h-[500px] flex-shrink-0 rounded-2xl last:mr-[calc(100vw-100%)]"
-            frontContent={<div>Передній контент</div>}
-            backContent={<div>Зворотній контент</div>}
+            frontContent={
+              <div className="flex flex-col w-full h-full justify-start items-start">
+                <h2 className="text-[2.5vw] mb-auto">
+                  {t("flippedCard.title")}
+                </h2>
+
+                <p className="text-center w-full">
+                  {t("flippedCard.subtitle")}
+                </p>
+              </div>
+            }
+            backContent={
+              <div className="flex flex-col justify-start w-full h-full">
+                <p>{t("flippedCard.backTitle")}</p>
+              </div>
+            }
+            className="w-[20vw] h-[25vw] flex-shrink-0 rounded-2xl"
           />
           <FlippedCard
-            backBg={Window}
             frontBg={Girl}
-            className="w-[450px] h-[500px] flex-shrink-0 rounded-2xl last:mr-[calc(100vw-100%)]"
-            frontContent={<div>Передній контент</div>}
-            backContent={<div>Зворотній контент</div>}
+            backBg={Window}
+            frontContent={
+              <div className="flex flex-col justify-start w-full h-full">
+                <h2 className="text-[2.5vw] mb-auto">
+                  {t("flippedCard.title")}
+                </h2>
+
+                <p className="text-center w-full">
+                  {t("flippedCard.subtitle")}
+                </p>
+              </div>
+            }
+            backContent={
+              <div className="flex flex-col justify-start w-full h-full">
+                <p className="text-center w-full">
+                  {t("flippedCard.backTitle")}
+                </p>
+              </div>
+            }
+            className="w-[20vw] h-[25vw] flex-shrink-0 rounded-2xl"
           />
           <FlippedCard
             backBg={Girl}
             frontBg={Window}
-            className="w-[450px] h-[500px] flex-shrink-0 rounded-2xl last:mr-[calc(100vw-100%)]"
-            frontContent={<div>Передній контент</div>}
-            backContent={<div>Зворотній контент</div>}
+            frontContent={
+              <div className="flex flex-col justify-start w-full h-full">
+                <h2 className="text-[2.5vw] mb-auto">
+                  {t("flippedCard.title")}
+                </h2>
+
+                <p className="text-center w-full">
+                  {t("flippedCard.subtitle")}
+                </p>
+              </div>
+            }
+            backContent={
+              <div className="flex flex-col justify-start w-full h-full">
+                <p className="text-center w-full">
+                  {t("flippedCard.backTitle")}
+                </p>
+              </div>
+            }
+            className="w-[20vw] h-[25vw] flex-shrink-0 rounded-2xl"
           />
           <FlippedCard
-            backBg={Window}
             frontBg={Girl}
-            className="w-[450px] h-[500px] flex-shrink-0 rounded-2xl last:mr-[calc(100vw-100%)]"
-            frontContent={<div>Передній контент</div>}
-            backContent={<div>Зворотній контент</div>}
+            backBg={Window}
+            frontContent={
+              <div className="flex flex-col justify-start w-full h-full">
+                <h2 className="text-[2.5vw] mb-auto">
+                  {t("flippedCard.title")}
+                </h2>
+
+                <p className="text-center w-full">
+                  {t("flippedCard.subtitle")}
+                </p>
+              </div>
+            }
+            backContent={
+              <div className="flex flex-col justify-start w-full h-full">
+                <p className="text-center w-full">
+                  {t("flippedCard.backTitle")}
+                </p>
+              </div>
+            }
+            className="w-[20vw] h-[25vw] flex-shrink-0 rounded-2xl"
+          />
+          <FlippedCard
+            backBg={Girl}
+            frontBg={Window}
+            frontContent={
+              <div className="flex flex-col justify-start w-full h-full">
+                <h2 className="text-[2.5vw] mb-auto">
+                  {t("flippedCard.title")}
+                </h2>
+
+                <p className="text-center w-full">
+                  {t("flippedCard.subtitle")}
+                </p>
+              </div>
+            }
+            backContent={
+              <div className="flex flex-col justify-start w-full h-full">
+                <p className="text-center w-full">
+                  {t("flippedCard.backTitle")}
+                </p>
+              </div>
+            }
+            className="w-[20vw] h-[25vw] flex-shrink-0 rounded-2xl"
           />
         </div>
       </section>

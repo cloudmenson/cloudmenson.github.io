@@ -7,12 +7,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FlyHeader } from "@/app/assets";
 import Image from "next/image";
 import { cn } from "@/app/utils/tailwind-merge";
-
-const navItems = [
-  { label: "Про нас", href: "#about" },
-  { label: "Ментори", href: "#mentors" },
-  { label: "Запис", href: "#booking" },
-];
+import { LangSelector } from "@/app/components";
+import { menuNavigation } from "@/app/utils/navigation";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -27,15 +23,15 @@ export const Header = () => {
 
   return (
     <header className="sticky top-0 flex items-center z-50 h-[60px] w-full bg-header dark:bg-header shadow-sm">
-      <div className="h-full w-full flex items-center justify-between px-[40px]">
+      <div className="h-full w-full flex items-center justify-between px-[2.5vw]">
         <Link href="/" className="text-lg font-bold color-foreground">
-          <h1>Crew Helper</h1>
+          <h1 className="text-[20px]">Crew Helper</h1>
         </Link>
 
         <div className="flex items-center gap-3 md:gap-6">
-          {/* <div className="hidden md:block">
-    
-          </div> */}
+          <div className="hidden md:block">
+            <LangSelector />
+          </div>
 
           <MenuIcon
             className="cursor-pointer"
@@ -69,7 +65,7 @@ export const Header = () => {
               </button>
 
               <div className="flex flex-col gap-3 mt-4">
-                {navItems.map((item) => (
+                {menuNavigation.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}

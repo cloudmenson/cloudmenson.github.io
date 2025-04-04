@@ -1,22 +1,23 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
+
 import { cn } from "@/app/utils/tailwind-merge";
 
 interface IFlippedCard {
-  frontContent: React.ReactNode;
-  backContent: React.ReactNode;
-  frontBg: StaticImageData;
-  backBg: StaticImageData;
   className?: string;
+  backBg: StaticImageData;
+  frontBg: StaticImageData;
+  backContent: React.ReactNode;
+  frontContent: React.ReactNode;
 }
 
 export const FlippedCard = ({
-  frontContent,
-  backContent,
+  // backBg,
   frontBg,
-  backBg,
   className,
+  backContent,
+  frontContent,
 }: IFlippedCard) => {
   const [flipped, setFlipped] = useState(false);
 
@@ -34,26 +35,28 @@ export const FlippedCard = ({
         <div className="absolute inset-0 rounded-lg shadow-lg [backface-visibility:hidden]">
           <Image
             src={frontBg}
-            alt="Front background"
             layout="fill"
             objectFit="cover"
-            className="rounded-lg"
+            alt="Front background"
+            className="rounded-lg select-none"
           />
-          <div className="absolute inset-0 flex items-center justify-center">
+
+          <div className="absolute inset-0 flex items-center justify-center p-[1vw] w-full h-full">
             {frontContent}
           </div>
         </div>
 
         {/* Зворотня сторона */}
-        <div className="absolute inset-0 rounded-lg shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]">
-          <Image
+        <div className="absolute inset-0 bg-flipped-card-backside-bg rounded-lg shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]">
+          {/* <Image
             src={backBg}
-            alt="Back background"
             layout="fill"
             objectFit="cover"
+            alt="Back background"
             className="rounded-lg"
-          />
-          <div className="absolute inset-0 flex items-center justify-center">
+          /> */}
+
+          <div className="absolute inset-0 flex items-center justify-center p-[1vw] w-full h-full">
             {backContent}
           </div>
         </div>
