@@ -1,9 +1,9 @@
-import { Inst, Ksenia, Pavlo, Stanislav, TikTok } from "../assets";
+import { Inst, Ksenia, Pavlo, Stan, TikTok } from "../assets";
 
 export const mentors = [
   {
     name: "Stanislav",
-    photo: Stanislav,
+    photo: Stan,
     socials: [
       { link: "#", icon: Inst },
       { link: "#", icon: TikTok },

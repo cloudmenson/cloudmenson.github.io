@@ -6,7 +6,7 @@ import Window from "./png/1.jpg";
 // mentors
 import Ksenia from "./png/mentors/Ksenia.jpg";
 import Pavlo from "./png/mentors/Pavlo.jpg";
-import Stanislav from "./png/mentors/Stanislav.jpg";
+import Stan from "./png/mentors/Stan.jpg";
 
 // social
 import Inst from "./svg/socials/inst.svg";
@@ -19,7 +19,7 @@ export {
   Inst,
   Ksenia,
   Pavlo,
-  Stanislav,
+  Stan,
   TikTok,
   Window,
 };
