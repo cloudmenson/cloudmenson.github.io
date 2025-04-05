@@ -18,7 +18,8 @@ export const mentors = [
       { link: "#", icon: Inst },
       { link: "#", icon: TikTok },
     ],
-    description: "",
+    description:
+      "Hi, I'm Ksenia! With 4 years of experience in aviation and 9 years of working with people across different fields and countries (Ukraine, Austria, Albania, Poland), I’ve had the opportunity to learn and grow in diverse environments. I successfully passed an interview with Qatar Airways and received a job offer. However, my personal goal is to live and work in Europe, which is why I’ve chosen to pursue a career with Wizz Air. Book a Consultation with me, and I will help you to start your journey in aviation and pass the interview successfully.",
   },
   {
     name: "Pavlo",
