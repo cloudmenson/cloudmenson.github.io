@@ -18,7 +18,7 @@ export const mentors = [
       { link: "#", icon: Inst },
       { link: "#", icon: TikTok },
     ],
-    description: "Test",
+    description: "",
   },
   {
     name: "Pavlo",
@@ -27,7 +27,8 @@ export const mentors = [
       { link: "#", icon: Inst },
       { link: "#", icon: TikTok },
     ],
-    description: "Test",
+    description:
+      "I’m Pavlo, 23 years old, and within just a month, I’ve reached the final interviews with three top airlines: Emirates, Qatar Airways, and Etihad. I’m here to help you earn your wings and achieve your dreams. With experience at Wizz Air, I’ve discovered that my superpower is communication because that’s the key to success. My sessions are all about creating a relaxed, enjoyable vibe where we connect, share, and learn. It’s not just about preparation — it’s about enjoying the journey. Let’s make it happen together!",
   },
 ];
 

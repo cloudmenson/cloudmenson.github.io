@@ -26,7 +26,7 @@ export const AboutUs = () => {
             className="flex flex-col items-center bg-white/10 rounded-xl p-[1.5vw] backdrop-blur-sm w-full h-full aspect-[3/4]"
           >
             <div className="w-[12vw] h-[12vw] bg-gray-300 rounded-full mb-[1vw] overflow-hidden">
-              <div className="relative w-full h-full mb-[1vw] rounded-full overflow-hidden">
+              <div className="relative w-full h-full mb-[1vw] rounded-full overflow-hidden select-none pointer-events-none">
                 <Image
                   fill
                   alt="Mentor"

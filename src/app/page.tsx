@@ -1,9 +1,9 @@
 "use client";
 
-import { ExampleModal } from "./components/ExampleModal";
 import { RootModal } from "./components/RootModal";
-import { Benefits, Course, FAQ, Greetings, AboutUs } from "./screens";
 import { useModalStore } from "./store/modalStore";
+import { ExampleModal } from "./components/ExampleModal";
+import { Benefits, Course, FAQ, Greetings, AboutUs } from "./screens";
 
 export default function Home() {
   const { isOpen, close } = useModalStore();
