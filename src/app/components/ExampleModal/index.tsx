@@ -15,6 +15,7 @@ export const ExampleModal = () => {
 
   useEffect(() => {
     const savedStep = localStorage.getItem("modal-step");
+    
     if (savedStep) {
       setStep(Number(savedStep));
     }

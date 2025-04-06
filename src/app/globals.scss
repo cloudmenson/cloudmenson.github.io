@@ -38,6 +38,11 @@ body {
   overscroll-behavior: none;
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
+
+  .slick-prev::before,
+  .slick-next::before {
+    content: none;
+  }
 }
 
 .custom-scroll::-webkit-scrollbar {

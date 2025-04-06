@@ -1,4 +1,4 @@
-import { Inst, Ksenia, Pavlo, Stan, TikTok } from "../assets";
+import { Girl, Inst, Ksenia, Pavlo, Stan, TikTok, Window } from "../assets";
 
 export const mentors = [
   {
@@ -78,5 +78,48 @@ export const questions = [
     question: "Чи допомагаєте ви вивчати англійську мову?",
     answer:
       "Так, у нас є гайдбук та менторська допомога з англійської для підготовки.",
+  },
+];
+
+export const benefits = [
+  {
+    backBg: Girl,
+    title: "Title",
+    frontBg: Window,
+    backContent: "Content",
+    backTitle: "Back title",
+    frontContent: "Press to turn over",
+  },
+  {
+    backBg: Girl,
+    title: "Title",
+    frontBg: Window,
+    backContent: "Content",
+    backTitle: "Back title",
+    frontContent: "Press to turn over",
+  },
+  {
+    backBg: Girl,
+    title: "Title",
+    frontBg: Window,
+    backContent: "Content",
+    backTitle: "Back title",
+    frontContent: "Press to turn over",
+  },
+  {
+    backBg: Girl,
+    title: "Title",
+    frontBg: Window,
+    backContent: "Content",
+    backTitle: "Back title",
+    frontContent: "Press to turn over",
+  },
+  {
+    backBg: Girl,
+    title: "Title",
+    frontBg: Window,
+    backContent: "Content",
+    backTitle: "Back title",
+    frontContent: "Press to turn over",
   },
 ];

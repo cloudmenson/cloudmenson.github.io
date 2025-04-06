@@ -5,7 +5,7 @@ import { Header } from "@/app/components";
 import { cn } from "./utils/tailwind-merge";
 import { I18nProvider } from "./providers/i18nProvider";
 
-import "./globals.css";
+import "./globals.scss";
 
 export const metadata: Metadata = {
   title: "Crew Helper",
