@@ -22,10 +22,37 @@ export const Header = () => {
   }, [menuOpen]);
 
   return (
-    <header className="sticky top-0 flex items-center z-50 h-[3.5vw] w-full bg-header dark:bg-header shadow-sm">
+    <header
+      className="
+      h-[12vw]
+      sm:h-[8vw]
+      md:h-[7vw]
+      lg:h-[5vw]
+      xl:h-[5vw]
+      2xl:h-[3.5vw]
+      sticky
+      top-0
+      flex
+      items-center
+      z-50
+      w-full
+      bg-header
+      dark:bg-header
+      shadow-sm"
+    >
       <div className="h-full w-full flex items-center justify-between px-[2.5vw]">
         <Link href="/" className="text-lg font-bold color-foreground">
-          <h1 className="text-[1vw]">Crew Helper</h1>
+          <h1
+            className="
+            text-[4vw]
+            sm:text-[3vw]
+            md:text-[2.2vw]
+            lg:text-[1.8vw]
+            xl:text-[1.3vw]
+            2xl:text-[1.2vw]"
+          >
+            Crew Helper
+          </h1>
         </Link>
 
         <div className="flex items-center gap-3 md:gap-6">
