@@ -7,18 +7,32 @@ import { I18nProvider } from "./providers/i18nProvider";
 
 import "./globals.scss";
 
-export const metadata: Metadata = {
-  title: "Crew Helper",
-  description: "Отримай ментора та дізнайся про професію бортпровідника",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const isUk = params.locale === "uk";
+
+  return {
+    title: isUk
+      ? "Crew Helper - Курс бортпровідника | Онлайн навчання"
+      : "Crew Helper - Flight attendant course | Online Training",
+    description: isUk
+      ? "Пройди онлайн-курс і отримай ментора, щоб стати бортпровідником."
+      : "Take an online course and get a mentor to become a flight attendant.",
+  };
+}
 
 export default function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { locale: string };
 }) {
   return (
-    <html lang="uk">
+    <html lang={params.locale}>
       <body>
         <I18nProvider>
           <Header />

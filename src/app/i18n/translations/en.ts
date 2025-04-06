@@ -1,7 +1,7 @@
 export const en = {
   home: {
     about:
-      "Learn everything about the flight attendant profession and find a mentor",
+      "Flight attendant course",
     consult: "Get a consultation",
   },
   flippedCard: {
