@@ -6,6 +6,7 @@ import { Greetings } from "./Greetings";
 import { Header } from "./Header";
 import { LangSelector } from "./LangSelector";
 import { Loader } from "./Loader";
+import { ScrollTo } from "./ScrollTo";
 
 export {
   AboutUs,
@@ -16,4 +17,5 @@ export {
   Header,
   LangSelector,
   Loader,
+  ScrollTo,
 };

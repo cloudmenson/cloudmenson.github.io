@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { Header } from "@/app/components";
+import { Header, ScrollTo } from "@/app/components";
 
 import { cn } from "./utils/tailwind-merge";
 import { I18nProvider } from "./providers/i18nProvider";
@@ -35,25 +35,27 @@ export default function RootLayout({
     <html lang={params.locale}>
       <body>
         <I18nProvider>
-          <Header />
+          <ScrollTo>
+            <Header />
 
-          <main className="">{children}</main>
+            <main className="">{children}</main>
 
-          <footer
-            className={cn(
-              "py-4",
-              "w-full",
-              "text-sm",
-              "bg-footer",
-              "text-center",
-              "text-gray-600",
-              "text-footer-text"
-            )}
-          >
-            <p className="text-[1vw]">
-              © {new Date().getFullYear()} Crew Helper
-            </p>
-          </footer>
+            <footer
+              className={cn(
+                "py-4",
+                "w-full",
+                "text-sm",
+                "bg-footer",
+                "text-center",
+                "text-gray-600",
+                "text-footer-text"
+              )}
+            >
+              <p className="text-[1vw]">
+                © {new Date().getFullYear()} Crew Helper
+              </p>
+            </footer>
+          </ScrollTo>
         </I18nProvider>
       </body>
     </html>

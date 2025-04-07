@@ -28,8 +28,8 @@ export default function Userpage() {
     <main className="min-h-screen bg-gradient-to-r from-gray-900 to-section-bg text-white">
       <section className="px-[2vw] py-[3vw]">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-[900px] mx-auto p-[2vw] bg-black/30 rounded-xl shadow-xl flex flex-col items-center"
         >
