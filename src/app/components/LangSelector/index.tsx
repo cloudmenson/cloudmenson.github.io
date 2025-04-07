@@ -1,14 +1,13 @@
 "use client";
 
+import { Globe } from "lucide-react";
 import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { Globe } from "lucide-react";
-
+import { cn } from "@/app/utils/tailwind-merge";
 import { languageConfig } from "@/app/i18n/languageConfig";
 import { useOutsideClick } from "@/app/hooks/useOutsideClick";
-import { cn } from "@/app/utils/tailwind-merge";
 
 export const LangSelector = () => {
   const { i18n } = useTranslation();
@@ -52,11 +51,11 @@ export const LangSelector = () => {
                       : "text-gray-700"
                   )}
                 >
-                  <p className="mr-2 text-[0.8vw] whitespace-nowrap overflow-hidden text-ellipsis">
+                  {icon}
+
+                  <p className="ml-2 text-[0.8vw] whitespace-nowrap overflow-hidden text-ellipsis">
                     {label}
                   </p>
-
-                  {icon}
                 </button>
               </li>
             ))}

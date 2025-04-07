@@ -41,16 +41,16 @@ export const Header = () => {
         </Link>
 
         <div className="flex items-center gap-3 md:gap-6">
-          <div className="hidden md:block">
-            <LangSelector />
-          </div>
-
           <Link
             href="/signin"
             className="text-blue-600 bg-button-signin py-[5px] px-[15px] rounded text-main-text"
           >
             Увійти
           </Link>
+
+          <div className="hidden md:block">
+            <LangSelector />
+          </div>
 
           <MenuIcon
             className="cursor-pointer"
