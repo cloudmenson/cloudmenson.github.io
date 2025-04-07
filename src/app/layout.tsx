@@ -5,7 +5,7 @@ import { Header } from "@/app/components";
 import { cn } from "./utils/tailwind-merge";
 import { I18nProvider } from "./providers/i18nProvider";
 
-import "./globals.scss";
+import "./globals.css";
 
 export async function generateMetadata({
   params,
@@ -41,7 +41,7 @@ export default function RootLayout({
 
           <footer
             className={cn(
-              "py-4 ",
+              "py-4",
               "w-full",
               "text-sm",
               "bg-footer",

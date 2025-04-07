@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import * as yup from "yup";
 import { useFormik } from "formik";
@@ -15,7 +17,7 @@ export const ExampleModal = () => {
 
   useEffect(() => {
     const savedStep = localStorage.getItem("modal-step");
-    
+
     if (savedStep) {
       setStep(Number(savedStep));
     }

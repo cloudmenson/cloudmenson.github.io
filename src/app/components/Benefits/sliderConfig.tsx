@@ -1,3 +1,5 @@
+"use client";
+
 import { NextArrow, PrevArrow } from "@/app/components/SliderButtons";
 
 export const sliderConfig = {

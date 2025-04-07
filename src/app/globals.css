@@ -20,7 +20,6 @@
   --color-menu: #1a1e23;
   --color-flipped-card-bg: #f0f8ff;
   --color-flipped-card-backside-bg: #1a1e23;
-  --color-pidlozhka: #ffffff;
 
   --color-scrollbar: #0056d2;
   --color-scrollbar-hover: #0047b2;
@@ -38,11 +37,11 @@ body {
   overscroll-behavior: none;
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
+}
 
-  .slick-prev::before,
-  .slick-next::before {
-    content: none;
-  }
+body .slick-prev::before,
+body .slick-next::before {
+  content: none;
 }
 
 .custom-scroll::-webkit-scrollbar {

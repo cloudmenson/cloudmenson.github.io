@@ -3,7 +3,7 @@
 import { RootModal } from "./components/RootModal";
 import { useModalStore } from "./store/modalStore";
 import { ExampleModal } from "./components/ExampleModal";
-import { Benefits, Course, FAQ, Greetings, AboutUs } from "./screens";
+import { AboutUs, Benefits, Course, FAQ, Greetings } from "./components";
 
 export default function Home() {
   const { isOpen, close } = useModalStore();

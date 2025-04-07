@@ -1,6 +1,8 @@
-import { useModalStore } from "@/app/store/modalStore";
+"use client";
 import { motion } from "framer-motion";
 import { Clock, UserCheck, PenLine } from "lucide-react";
+
+import { useModalStore } from "@/app/store/modalStore";
 
 export const Course = () => {
   const { open } = useModalStore();

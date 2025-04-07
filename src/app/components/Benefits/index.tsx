@@ -3,7 +3,7 @@
 import Slider from "react-slick";
 
 import { benefits } from "@/app/utils/mock";
-import { FlippedCard } from "@/app/components/FlippedCard";
+import { FlippedCard } from "../FlippedCard";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

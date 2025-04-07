@@ -1,10 +1,12 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
-import { Button } from "@/app/components/Button";
+import { Button } from "../Button";
 import { useModalStore } from "@/app/store/modalStore";
 
-export const Greetings = ({}) => {
+export const Greetings = () => {
   const { open } = useModalStore();
   const { t } = useTranslation();
 

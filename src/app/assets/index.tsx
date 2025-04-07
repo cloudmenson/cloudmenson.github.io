@@ -2,6 +2,7 @@ import FlyHeader from "./png/133.png";
 import Girl from "./png/3.png";
 import greetingsImage from "./png/greetings.png";
 import Window from "./png/1.jpg";
+import Signin from "./png/signin.jpg";
 
 // mentors
 import Ksenia from "./png/mentors/Ksenia.jpg";
@@ -19,6 +20,7 @@ export {
   Inst,
   Ksenia,
   Pavlo,
+  Signin,
   Stan,
   TikTok,
   Window,

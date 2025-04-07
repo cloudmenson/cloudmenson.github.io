@@ -24,12 +24,7 @@ export const Header = () => {
   return (
     <header
       className="
-      h-[12vw]
-      sm:h-[8vw]
-      md:h-[7vw]
-      lg:h-[5vw]
-      xl:h-[5vw]
-      2xl:h-[3.5vw]
+      h-[60px]
       sticky
       top-0
       flex
@@ -42,23 +37,20 @@ export const Header = () => {
     >
       <div className="h-full w-full flex items-center justify-between px-[2.5vw]">
         <Link href="/" className="text-lg font-bold color-foreground">
-          <h1
-            className="
-            text-[4vw]
-            sm:text-[3vw]
-            md:text-[2.2vw]
-            lg:text-[1.8vw]
-            xl:text-[1.3vw]
-            2xl:text-[1.2vw]"
-          >
-            Crew Helper
-          </h1>
+          <h1 className="text-[20px]">Crew Helper</h1>
         </Link>
 
         <div className="flex items-center gap-3 md:gap-6">
           <div className="hidden md:block">
             <LangSelector />
           </div>
+
+          <Link
+            href="/signin"
+            className="text-blue-600 bg-button-signin py-[5px] px-[15px] rounded text-main-text"
+          >
+            Увійти
+          </Link>
 
           <MenuIcon
             className="cursor-pointer"
