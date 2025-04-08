@@ -8,7 +8,7 @@ interface UserData {
 }
 interface AuthStore {
   user: UserData | null;
-  setUser: (user: UserData) => void;
+  setUser: (user: UserData | null) => void;
   logout: () => void;
 }
 export const useAuthStore = create<AuthStore>((set) => ({
