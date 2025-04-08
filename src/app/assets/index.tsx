@@ -13,9 +13,12 @@ import Stan from "./png/mentors/Stan.jpg";
 import Inst from "./svg/socials/inst.svg";
 import TikTok from "./svg/socials/tiktok.svg";
 
+import Google from "./svg/google.svg";
+
 export {
   FlyHeader,
   Girl,
+  Google,
   greetingsImage,
   Inst,
   Ksenia,

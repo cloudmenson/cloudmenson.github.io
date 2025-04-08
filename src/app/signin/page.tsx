@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
+import Image from "next/image";
+// import Link from "next/link";
 
-import { Signin } from "../assets";
-import Link from "next/link";
+import { Google, Signin } from "../assets";
 import { useFirebaseLogin } from "../hooks/useAuth";
 
 export default function SignInPage() {
@@ -54,15 +54,29 @@ export default function SignInPage() {
 
           <button
             type="button"
-            onClick={signInWithGoogle}
+            // onClick={signInWithGoogle}
             className="w-full bg-blue-600 text-white py-2 px-4 mb-[1.5vw] rounded hover:bg-blue-700 transition"
           >
             Увійти
           </button>
 
-          <Link className="underline flex justify-center" href={"/signup"}>
+          <button
+            type="button"
+            onClick={signInWithGoogle}
+            className="flex justify-center mx-auto outline outline-offset-2 p-[0.2vw] rounded w-[30px] h-[30px] cursor-pointer"
+          >
+            <Image
+              width={30}
+              height={30}
+              src={Google}
+              alt="Google"
+              loading="lazy"
+            />
+          </button>
+
+          {/* <Link className="underline flex justify-center" href={"/signup"}>
             Already have an account?
-          </Link>
+          </Link> */}
         </form>
       </div>
     </main>

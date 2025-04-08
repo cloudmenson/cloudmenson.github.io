@@ -13,7 +13,7 @@ export const useFirebaseLogin = () => {
       await signInWithPopup(auth, googleProvider);
 
       // тут можна записати user в стор, cookies або context
-      router.push("/userpage");
+      router.push("/user");
     } catch (err: unknown) {
       if (err instanceof Error) {
         console.error("Error:", err.message);

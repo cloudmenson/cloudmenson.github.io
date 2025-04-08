@@ -15,7 +15,7 @@ export default function SignUpPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Логіка реєстрації:
-    console.log("Registering user:", { name, email, password });
+    console.log("Registering user:", { email, password });
   };
 
   return (

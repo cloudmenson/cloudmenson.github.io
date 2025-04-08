@@ -62,7 +62,7 @@ export const FlippedCard = ({
             src={backBg}
             layout="fill"
             objectFit="cover"
-            alt="Back background"
+            alt="Background"
             className="rounded-lg"
           />
 

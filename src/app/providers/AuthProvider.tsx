@@ -1,7 +1,7 @@
 "use client";
 
-import { onAuthStateChanged, getAuth } from "firebase/auth";
 import { useEffect } from "react";
+import { onAuthStateChanged, getAuth } from "firebase/auth";
 
 import { app } from "../lib/firebase";
 import { useAuthStore } from "../store/modalStore";

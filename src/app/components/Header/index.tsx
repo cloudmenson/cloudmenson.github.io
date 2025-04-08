@@ -1,16 +1,20 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { X, MenuIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+
 import { FlyHeader } from "@/app/assets";
-import Image from "next/image";
 import { cn } from "@/app/utils/tailwind-merge";
 import { LangSelector } from "@/app/components";
 import { menuNavigation } from "@/app/utils/mock";
+import { useAuthStore } from "@/app/store/modalStore";
 
 export const Header = () => {
+  const { user } = useAuthStore();
+
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   useEffect(() => {
@@ -41,12 +45,28 @@ export const Header = () => {
         </Link>
 
         <div className="flex items-center gap-3 md:gap-6">
-          <Link
-            href="/signin"
-            className="text-blue-600 bg-button-signin py-[5px] px-[15px] rounded text-main-text"
-          >
-            Увійти
-          </Link>
+          {user?.photoURL ? (
+            <Link
+              href="/user"
+              className=" w-[40px] h-[40px] rounded-full overflow-hidden"
+            >
+              <Image
+                width={40}
+                alt="User"
+                height={40}
+                loading="lazy"
+                src={user.photoURL}
+                className="w-full h-auto cover"
+              />
+            </Link>
+          ) : (
+            <Link
+              href="/signin"
+              className="text-blue-600 bg-button-signin py-[5px] px-[15px] rounded text-main-text"
+            >
+              Увійти
+            </Link>
+          )}
 
           <div className="hidden md:block">
             <LangSelector />

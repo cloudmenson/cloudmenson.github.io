@@ -2,13 +2,17 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
+
 import { Loader } from "../components";
 import { useAuthStore } from "../store/modalStore";
+import { useFirebaseSignOut } from "../hooks/useSignOut";
 
 export default function Userpage() {
   const { user } = useAuthStore();
+  const router = useRouter();
+
   const [loading, setLoading] = useState(true);
 
   // Імітуємо отримання даних користувача
@@ -16,10 +20,14 @@ export default function Userpage() {
     // Тут можна викликати своє API /user, перевіряти токен і т.д.
     // Якщо токен недійсний → router.push("/signin")
 
+    if (user === null) {
+      router.push("/");
+    }
+
     setTimeout(() => {
       setLoading(false);
     }, 2000);
-  }, []);
+  }, [user, router]);
 
   if (loading) {
     return <Loader />;
@@ -70,6 +78,13 @@ export default function Userpage() {
             знайдете інформацію про свої курси, менторів та зможете редагувати
             профіль.
           </motion.p>
+
+          <motion.button
+            className="text-white p-[0.5vw] rounded outline outline-offset-2 cursor-pointer"
+            onClick={useFirebaseSignOut}
+          >
+            Sign out
+          </motion.button>
         </motion.div>
       </section>
     </main>
