@@ -1,12 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 import { motion } from "framer-motion";
 import { Loader } from "../components";
+import { useAuthStore } from "../store/modalStore";
 
 export default function Userpage() {
-  const [username, setUsername] = useState("Guest"); // або отримуємо з пропсів чи контексту
+  const { user } = useAuthStore();
   const [loading, setLoading] = useState(true);
 
   // Імітуємо отримання даних користувача
@@ -15,7 +17,6 @@ export default function Userpage() {
     // Якщо токен недійсний → router.push("/signin")
 
     setTimeout(() => {
-      setUsername("Danya");
       setLoading(false);
     }, 2000);
   }, []);
@@ -33,13 +34,30 @@ export default function Userpage() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-[900px] mx-auto p-[2vw] bg-black/30 rounded-xl shadow-xl flex flex-col items-center"
         >
+          {user?.photoURL && (
+            <motion.div
+              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="w-[4vw] h-[4vw] relative mb-[1vw] shadow-lg border-2 border-white rounded-full overflow-hidden"
+            >
+              <Image
+                src={user.photoURL}
+                alt="User avatar"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 6vw"
+              />
+            </motion.div>
+          )}
+
           <motion.h2
-            initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
+            initial={{ y: 20, opacity: 0 }}
             className="text-3xl font-bold mb-[1vw]"
+            transition={{ delay: 0.4, duration: 0.8 }}
           >
-            Вітаємо, {username}!
+            Вітаємо, {user?.displayName}!
           </motion.h2>
 
           <motion.p
