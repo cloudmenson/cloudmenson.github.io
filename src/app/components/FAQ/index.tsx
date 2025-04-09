@@ -21,8 +21,19 @@ export const FAQ = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="max-w-[70%] w-full py-[5vw] px-[2vw] mx-auto text-section-text"
     >
-      <h2 className="text-[2vw] font-bold text-center mb-[3vw]">
-        Поширені питання
+      <h2
+        className="
+          text-[6.5vw]
+          sm:text-[5vw]
+          md:text-[3.5vw]
+          lg:text-[2.5vw]
+          xl:text-[2.5vw]
+          2xl:text-[2.5vw]
+          font-bold
+          text-center
+          mb-[4vw]"
+      >
+        FAQ
       </h2>
 
       <div className="space-y-[1vw]">

@@ -5,7 +5,7 @@ import { Plane } from "lucide-react";
 
 export const Loader = () => {
   return (
-    <div className="flex flex-col items-center m-auto justify-center w-full h-[100dvh] gap-4 text-white">
+    <div className="flex p-[200vw] flex-col items-center m-auto justify-center w-full h-[100dvh] gap-4 text-white">
       <motion.div
         className="text-blue-400"
         animate={{ opacity: 1, y: 0 }}

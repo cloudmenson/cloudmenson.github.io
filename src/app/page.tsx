@@ -3,7 +3,7 @@
 import { RootModal } from "./components/RootModal";
 import { useModalStore } from "./store/modalStore";
 import { ExampleModal } from "./components/ExampleModal";
-import { AboutUs, Benefits, Course, FAQ, Greetings } from "./components";
+import { FAQ, Course, AboutUs, Benefits, Greetings } from "./components";
 
 export default function Home() {
   const { isOpen, close } = useModalStore();
@@ -14,9 +14,9 @@ export default function Home() {
 
       <Benefits />
 
-      <Course />
-
       <AboutUs />
+
+      <Course />
 
       <FAQ />
 

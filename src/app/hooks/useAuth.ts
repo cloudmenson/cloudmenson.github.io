@@ -1,18 +1,21 @@
-// "use client";
+"use client";
 
 import { useRouter } from "next/navigation";
 import { signInWithPopup } from "firebase/auth";
 
+import { useLoadingStore } from "../store/loadingStore";
 import { auth, googleProvider } from "@/app/lib/firebase";
 
 export const useFirebaseLogin = () => {
   const router = useRouter();
+  const { setLoading } = useLoadingStore.getState();
 
   const signInWithGoogle = async () => {
     try {
+      setLoading(true);
+
       await signInWithPopup(auth, googleProvider);
 
-      // тут можна записати user в стор, cookies або context
       router.push("/user");
     } catch (err: unknown) {
       if (err instanceof Error) {
@@ -20,6 +23,8 @@ export const useFirebaseLogin = () => {
       } else {
         console.error("Unknown error", err);
       }
+    } finally {
+      setLoading(true);
     }
   };
 

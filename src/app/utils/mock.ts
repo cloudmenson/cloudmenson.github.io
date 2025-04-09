@@ -1,3 +1,5 @@
+import { Clock, UserCheck, PenLine } from "lucide-react";
+
 import { Girl, Inst, Ksenia, Pavlo, Stan, TikTok, Window } from "../assets";
 
 export const mentors = [
@@ -121,5 +123,52 @@ export const benefits = [
     backContent: "Content",
     backTitle: "Back title",
     frontContent: "Press to turn over",
+  },
+];
+
+export const courses = [
+  {
+    title: "Basic",
+    price: 45,
+    gradient: "from-purple-500 to-pink-600",
+    color: "text-purple-400, text-pink-400",
+    Icon: Clock,
+    benefits: [
+      "1.5-hour personal session with one of our mentors, including a full personal evaluation.",
+      "Free guidebook.",
+      "Access to the Learning Hub.",
+      "2 role-play simulations.",
+    ],
+    buttonText: "Get Basic",
+    link: "/signin",
+  },
+  {
+    title: "Aviator",
+    price: 75,
+    color: "text-yellow-500, text-amber-600",
+    gradient: "from-yellow-500 to-amber-600",
+    lor: "",
+    Icon: UserCheck,
+    benefits: [
+      "2-hour personal session with one of our mentors, including a full personal evaluation.",
+      "Free guidebook.",
+      "Access to the Learning Hub.",
+      "24/7 mentorship support throughout your preparation process.",
+      "5 role-play simulations.",
+      "Personalized guidance on choosing the right outfit for your interview — feel confident and professional.",
+      "Craft your cabin crew CV to achieve your goal.",
+    ],
+    buttonText: "Get Aviator",
+    link: "/signin",
+  },
+  {
+    title: "Craft your CV",
+    price: 19.9,
+    gradient: "from-blue-500 to-indigo-600",
+    color: "text-blue-500, text-indigo-600",
+    Icon: PenLine,
+    benefits: ["Craft the perfect cabin crew CV to help you reach your goal."],
+    buttonText: "Get Coaching",
+    link: "/signin",
   },
 ];

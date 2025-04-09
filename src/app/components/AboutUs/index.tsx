@@ -1,16 +1,50 @@
 "use client";
 
-import Image from "next/image";
+import React from "react";
+import { useMediaQuery } from "react-responsive";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
 
 import { mentors } from "@/app/utils/mock";
-import React from "react";
+import { Mentor, MentorCard } from "../Cards/MentorCard";
+
+import "swiper/css";
+import "swiper/css/navigation";
 
 export const AboutUs = () => {
-  return (
-    <section className="py-[5vw] px-[2vw] max-w-[90vw] mx-auto text-white">
-      <h2 className="text-[2vw] font-bold text-center mb-[3vw]">About us</h2>
+  const isMobile = useMediaQuery({ maxWidth: 1440 });
 
-      <p className="text-[1.2vw] max-w-[60vw] mx-auto text-center mb-[4vw] leading-relaxed">
+  return (
+    <section className="py-10 px-4 sm:px-6 md:px-8 lg:px-[2vw] max-w-[90vw] mx-auto text-white">
+      <h2
+        className="
+          text-[6.5vw]
+          sm:text-[5vw]
+          md:text-[3.5vw]
+          lg:text-[2.5vw]
+          xl:text-[2.5vw]
+          2xl:text-[2.5vw]
+          font-bold
+          text-center
+          mb-[4vw]"
+      >
+        About us
+      </h2>
+
+      <p
+        className="
+        text-[3.5vw]
+        sm:text-[2.8vw]
+        md:text-[2.5vw]
+        lg:text-[1.8vw]
+        xl:text-[1.5vw]
+        2xl:text-[1.3vw]
+        max-w-6xl
+        mx-auto
+        text-center
+        mb-10
+        leading-relaxed"
+      >
         At Crew Helper, we’re more than just mentors — we’re active airline
         professionals who know the industry from the inside. We’ve sat in the
         interview chair, passed the toughest assessments, and earned our wings.
@@ -19,52 +53,34 @@ export const AboutUs = () => {
         is our goal.
       </p>
 
-      <div className="grid grid-cols-3 gap-[2vw] justify-items-center w-full">
-        {mentors.map((mentor, idx) => (
-          <div
-            key={idx}
-            className="flex flex-col items-center bg-white/10 rounded-xl p-[1.5vw] backdrop-blur-sm w-full h-full aspect-[3/4]"
-          >
-            <div className="w-[12vw] h-[12vw] bg-gray-300 rounded-full mb-[1vw] overflow-hidden">
-              <div className="relative w-full h-full mb-[1vw] rounded-full overflow-hidden select-none pointer-events-none">
-                <Image
-                  fill
-                  alt="Mentor"
-                  loading="lazy"
-                  src={mentor.photo}
-                  className="object-cover object-top"
-                />
-              </div>
-            </div>
-
-            <p className="text-[1.1vw] mt-[0.5vw] font-medium">{mentor.name}</p>
-
-            <p className="text-[0.95vw] text-center mb-auto text-white/70 mt-[0.5vw]">
-              {mentor.description}
-            </p>
-
-            <div className="flex justify-center gap-[1vw] py-[0.8vw]">
-              {mentor.socials.map((social, idx) => (
-                <React.Fragment key={idx}>
-                  <a
-                    target="_blank"
-                    href={social.link}
-                    rel="noopener noreferrer"
-                    className="hover:opacity-80"
-                  >
-                    <Image
-                      alt="Social"
-                      loading="lazy"
-                      src={social.icon}
-                      className="w-[1.8vw] h-[1.8vw]"
-                    />
-                  </a>
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
+      {isMobile ? (
+        <Swiper
+          modules={[Navigation, Autoplay]}
+          spaceBetween={24}
+          slidesPerView={1}
+          autoplay={{ delay: 8000 }}
+          navigation
+          className="p-[1vw]"
+          breakpoints={{
+            480: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 2 },
+            1440: { slidesPerView: 3 },
+          }}
+        >
+          {mentors.map((data: Mentor, idx) => (
+            <SwiperSlide key={idx}>
+              <MentorCard data={data} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      ) : (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-[2vw] justify-items-center w-full">
+          {mentors.map((data: Mentor, idx) => (
+            <MentorCard key={idx} data={data} />
+          ))}
+        </div>
+      )}
     </section>
   );
 };

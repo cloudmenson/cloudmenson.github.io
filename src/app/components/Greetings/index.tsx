@@ -1,13 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
-
 import { Button } from "../Button";
-import { useModalStore } from "@/app/store/modalStore";
 
 export const Greetings = () => {
-  const { open } = useModalStore();
   const { t } = useTranslation();
 
   const video = "/videos/greetings.mp4";
@@ -87,7 +85,9 @@ export const Greetings = () => {
           initial={{ opacity: 0, y: 20 }}
           transition={{ delay: 0.6, duration: 1 }}
         >
-          <Button text={t("home.consult")} onClick={open} />
+          <Link href="/signin">
+            <Button text={t("home.consult")} />
+          </Link>
         </motion.div>
       </motion.div>
     </section>

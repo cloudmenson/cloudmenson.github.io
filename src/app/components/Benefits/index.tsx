@@ -1,33 +1,56 @@
 "use client";
 
-import Slider from "react-slick";
-
-import { benefits } from "@/app/utils/mock";
-import { FlippedCard } from "../FlippedCard";
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-import { sliderConfig } from "./sliderConfig";
+import { motion } from "framer-motion";
 
 export const Benefits = () => {
   return (
-    <section className="px-[2vw] py-[2vw] bg-section-bg w-full">
-      <Slider {...sliderConfig} className="custom-scroll p-[1vw]">
-        {benefits.map((card, idx) => (
-          <div key={idx} className="px-[1vw]">
-            <FlippedCard
-              title={card.title}
-              backBg={card.backBg}
-              frontBg={card.frontBg}
-              backTitle={card.backTitle}
-              backContent={card.backContent}
-              frontContent={card.frontContent}
-              className="w-full h-[25vw] rounded-2xl"
-            />
-          </div>
-        ))}
-      </Slider>
+    <section className="px-[2vw] pb-[4vw] pt-[10vw] bg-section-bg w-full flex justify-center">
+      <div className="w-full max-w-[60vw] flex flex-col items-center gap-y-[4vw]">
+        <div className="w-full flex justify-start">
+          <motion.div
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className="min-h-[25vw] w-[35vw] p-[2vw] bg-white/10 text-white rounded-2xl shadow-lg text-[1.2vw] font-medium"
+          >
+            Команда менторів з досвідом у великих авіалініях
+          </motion.div>
+        </div>
+        <div className="w-full flex justify-end">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="min-h-[25vw] w-[35vw] p-[2vw] bg-white/10 text-white rounded-2xl shadow-lg text-[1.2vw] font-medium"
+          >
+            Справжні кейси та підготовка до співбесіди
+          </motion.div>
+        </div>
+        <div className="w-full flex justify-start">
+          <motion.div
+            viewport={{ once: true }}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="min-h-[25vw] w-[35vw] p-[2vw] bg-white/10 text-white rounded-2xl shadow-lg text-[1.2vw] font-medium"
+          >
+            Підтримка на кожному етапі підготовки
+          </motion.div>
+        </div>
+        <div className="w-full flex justify-end">
+          <motion.div
+            viewport={{ once: true }}
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="min-h-[25vw] w-[35vw] p-[2vw] bg-white/10 text-white rounded-2xl shadow-lg text-[1.2vw] font-medium"
+          >
+            Допомога з підготовкою резюме та виглядом
+          </motion.div>
+        </div>
+      </div>
     </section>
   );
 };
