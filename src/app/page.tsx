@@ -1,28 +1,54 @@
 "use client";
 
-import { RootModal } from "./components/RootModal";
+import React from "react";
+
 import { useModalStore } from "./store/modalStore";
-import { ExampleModal } from "./components/ExampleModal";
-import { FAQ, Course, AboutUs, Benefits, Greetings } from "./components";
+import { RootModal } from "./components/Public/RootModal";
+import { ExampleModal } from "./components/Public/ExampleModal";
+import {
+  FAQ,
+  Course,
+  Header,
+  AboutUs,
+  Benefits,
+  Greetings,
+} from "./components";
 
 export default function Home() {
   const { isOpen, close } = useModalStore();
 
   return (
-    <main className="flex flex-col">
-      <Greetings />
+    <React.Fragment>
+      <Header />
 
-      <Benefits />
+      <main className="flex flex-col">
+        <Greetings />
 
-      <AboutUs />
+        <Benefits />
 
-      <Course />
+        <AboutUs />
 
-      <FAQ />
+        <Course />
 
-      <RootModal isOpen={isOpen} onClose={close}>
-        <ExampleModal />
-      </RootModal>
-    </main>
+        <FAQ />
+
+        <RootModal isOpen={isOpen} onClose={close}>
+          <ExampleModal />
+        </RootModal>
+      </main>
+
+      <footer
+        className="
+          py-4
+          w-full
+          text-sm
+          bg-footer
+          text-center
+          text-gray-600
+          text-footer-text"
+      >
+        <p className="text-[1vw]">© {new Date().getFullYear()} Crew Helper</p>
+      </footer>
+    </React.Fragment>
   );
 }

@@ -1,15 +1,15 @@
-import { AboutUs } from "./AboutUs";
-import { Benefits } from "./Benefits";
-import { Course } from "./Course";
-import { CourseCard } from "./Cards/CourseCard";
-import { FAQ } from "./FAQ";
-import { FlippedCard } from "./Cards/FlippedCard";
-import { Greetings } from "./Greetings";
-import { Header } from "./Header";
-import { LangSelector } from "./LangSelector";
-import { Loader } from "./Loader";
-import { MentorCard } from "./Cards/MentorCard";
-import { ScrollTo } from "./ScrollTo";
+import { AboutUs } from "./Public/AboutUs";
+import { Benefits } from "./Public/Benefits";
+import { Course } from "./Public/Course";
+import { CourseCard } from "./Public/Cards/CourseCard";
+import { FAQ } from "./Public/FAQ";
+import { FlippedCard } from "./Public/Cards/FlippedCard";
+import { Greetings } from "./Public/Greetings";
+import { Header } from "./Public/Header";
+import { LangSelector } from "./Public/LangSelector";
+import { Loader } from "./Public/Loader";
+import { MentorCard } from "./Public/Cards/MentorCard";
+import { ScrollTo } from "./Public/ScrollTo";
 
 export {
   AboutUs,
