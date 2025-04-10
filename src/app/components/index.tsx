@@ -2,6 +2,7 @@ import { AboutUs } from "./Public/AboutUs";
 import { Benefits } from "./Public/Benefits";
 import { Course } from "./Public/Course";
 import { CourseCard } from "./Public/Cards/CourseCard";
+import { FallbackImage } from "./Public/FallbackImage";
 import { FAQ } from "./Public/FAQ";
 import { FlippedCard } from "./Public/Cards/FlippedCard";
 import { Greetings } from "./Public/Greetings";
@@ -16,6 +17,7 @@ export {
   Benefits,
   Course,
   CourseCard,
+  FallbackImage,
   FAQ,
   FlippedCard,
   Greetings,

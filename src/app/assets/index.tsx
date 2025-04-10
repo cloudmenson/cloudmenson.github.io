@@ -1,21 +1,18 @@
+import fallbackImage from "./png/fallbackImage.jpeg";
 import FlyHeader from "./png/133.png";
 import Girl from "./png/3.png";
+import Google from "./svg/google.svg";
 import greetingsImage from "./png/greetings.png";
-import Window from "./png/1.jpg";
-import Signin from "./png/signin.jpg";
-
-// mentors
+import Inst from "./svg/socials/inst.svg";
 import Ksenia from "./png/mentors/Ksenia.jpg";
 import Pavlo from "./png/mentors/Pavlo.jpg";
+import Signin from "./png/signin.jpg";
 import Stan from "./png/mentors/Stan.jpg";
-
-// social
-import Inst from "./svg/socials/inst.svg";
 import TikTok from "./svg/socials/tiktok.svg";
-
-import Google from "./svg/google.svg";
+import Window from "./png/1.jpg";
 
 export {
+  fallbackImage,
   FlyHeader,
   Girl,
   Google,

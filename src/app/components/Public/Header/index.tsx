@@ -47,7 +47,7 @@ export const Header = () => {
         <div className="flex items-center gap-3 md:gap-6">
           {user?.photoURL ? (
             <Link
-              href="/user"
+              href="/home"
               className=" w-[40px] h-[40px] rounded-full overflow-hidden"
             >
               <Image

@@ -16,7 +16,7 @@ export const useFirebaseLogin = () => {
 
       await signInWithPopup(auth, googleProvider);
 
-      router.push("/user");
+      router.push("/home");
     } catch (err: unknown) {
       if (err instanceof Error) {
         console.error("Error:", err.message);

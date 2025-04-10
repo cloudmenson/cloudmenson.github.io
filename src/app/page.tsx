@@ -21,7 +21,7 @@ export default function Home() {
     <React.Fragment>
       <Header />
 
-      <main className="flex flex-col">
+      <div className="flex flex-col">
         <Greetings />
 
         <Benefits />
@@ -35,7 +35,7 @@ export default function Home() {
         <RootModal isOpen={isOpen} onClose={close}>
           <ExampleModal />
         </RootModal>
-      </main>
+      </div>
 
       <footer
         className="

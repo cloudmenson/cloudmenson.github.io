@@ -172,3 +172,56 @@ export const courses = [
     link: "/signin",
   },
 ];
+
+export const articles = [
+  {
+    id: 1,
+    title:
+      "Can You Help Me Improve My English? Can You Help Me Improve My English? Can You Help Me Improve My English? Can You Help Me Improve My English? Can You Help Me Improve My English? Can You Help Me Improve My English? Can You Help Me Improve My English?",
+    author: "Anna",
+    date: "1 day ago",
+    image: "/images/learning1.jpg",
+    tag: "fly",
+  },
+  {
+    id: 2,
+    title:
+      "How I Passed the Final Stage of the Cabin Crew Interview with Qatar Airways, Emirates, and Etihad Emirates, and Etihad Emirates, and Etihad Emirates, and Etihad Emirates, and Etihad Emirates, and Etihad Emirates, and Etihad Emirates, and Etihad Emirates, and Etihad",
+    author: "Tom",
+    date: "19 days ago",
+    image: "/images/learning2.jpg",
+    tag: "final interview",
+  },
+  {
+    id: 3,
+    title: "Etihad Open Day 1: What to Expect",
+    author: "Sophia",
+    date: "99 days ago",
+    image: "/images/learning3.jpg",
+    tag: "Etihad",
+  },
+  {
+    id: 4,
+    title: "How to Apply",
+    author: "Emily",
+    date: "99 days ago",
+    image: "/images/learning4.jpg",
+    tag: "Etihad",
+  },
+  {
+    id: 5,
+    title: "Essential",
+    author: "Emily",
+    date: "99 days ago",
+    image: "/images/learning5.jpg",
+    tag: "preparation",
+  },
+  {
+    id: 6,
+    title: "Etihad Virtual Assessment – 2024 July Updates",
+    author: "Emily",
+    date: "99 days ago",
+    image: "/images/learning6.jpg",
+    tag: "Etihad",
+  },
+];

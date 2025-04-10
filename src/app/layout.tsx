@@ -37,7 +37,7 @@ export default function RootLayout({
         <I18nProvider>
           <AuthProvider>
             <ScrollTo>
-              <main className="">{children}</main>
+              <main>{children}</main>
             </ScrollTo>
           </AuthProvider>
         </I18nProvider>
