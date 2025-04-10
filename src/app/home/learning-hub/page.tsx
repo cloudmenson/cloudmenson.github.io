@@ -1,18 +1,53 @@
 "use client";
 
-import { articles } from "@/app/utils/mock";
-import { FallbackImage } from "@/app/components";
+import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+
+import { getFunctions, httpsCallable } from "firebase/functions";
+
+import { db, app } from "@/app/lib/firebase";
+// import { FallbackImage } from "@/app/components";
 
 type Article = {
-  id: number;
+  id: string;
+  tag: string;
   date: string;
-  tag?: string;
   title: string;
   image: string;
   author: string;
 };
 
 export default function LearningHub() {
+  const [articles, setArticles] = useState<Article[]>([]);
+
+  useEffect(() => {
+    const fetchArticles = async () => {
+      const querySnapshot = await getDocs(collection(db, "learningHubPosts"));
+      const data = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      })) as Article[];
+      setArticles(data);
+    };
+
+    fetchArticles();
+  }, []);
+
+  const functionsInstance = getFunctions(app, "europe-west1");
+  const setAdminFunction = httpsCallable(functionsInstance, "setAdmin");
+
+  const makeUserAdmin = async () => {
+    try {
+      const result = await setAdminFunction({
+        uid: "dUBvcL9Hv7bJdoXCMcupAYwilup1",
+      });
+
+      console.log(result);
+    } catch (error) {
+      console.error("Помилка встановлення адміністраторського статусу:", error);
+    }
+  };
+
   return (
     <section
       className="
@@ -37,12 +72,12 @@ export default function LearningHub() {
             className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 break-inside-avoid"
           >
             <div className="relative w-full min-h-[200px] max-h-fit">
-              <FallbackImage
+              {/* <FallbackImage
                 fill
                 src={article.image}
                 alt={article.title}
                 className="object-cover"
-              />
+              /> */}
 
               {article.tag && (
                 <span className="absolute top-2 right-2 bg-black text-white text-xs px-2 py-1 rounded">
@@ -61,12 +96,16 @@ export default function LearningHub() {
               </div>
 
               <div className="text-sm text-gray-400 flex justify-between mt-2">
-                <span>{article.date}</span>
+                {/* <span>{article.date}</span> */}
               </div>
             </div>
           </div>
         ))}
       </div>
+
+      <button type="button" className="w-full bg-white" onClick={makeUserAdmin}>
+        makeUserAdmin
+      </button>
     </section>
   );
 }

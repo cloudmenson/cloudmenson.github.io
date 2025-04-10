@@ -11,7 +11,7 @@ import {
 
 export const PrivateSidebar = () => {
   return (
-    <aside className="px-[1.5vw] py-[2vw] hidden md:flex fixed left-0 top-0 h-screen w-[250px] bg-gradient-to-r from-gray-900 to-section-bg shadow-xl z-40 flex-col">
+    <aside className="px-[1.5vw] py-[2vw] hidden lg:flex fixed left-0 top-0 h-screen w-[250px] bg-gradient-to-r from-gray-900 to-section-bg shadow-xl z-40 flex-col">
       <nav className="flex flex-col gap-4 text-white font-medium">
         <Link href="/home" className="flex items-center gap-2">
           <LayoutDashboard size={24} />
