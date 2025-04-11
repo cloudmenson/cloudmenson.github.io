@@ -25,7 +25,7 @@ export const FAQ = () => {
         px-[2vw]
         mx-auto
         text-section-text
-        max-w-[90%]
+        max-w-[95%]
         sm:max-w-[90%]
         md:max-w-[90%]
         lg:max-w-[90%]
@@ -68,16 +68,35 @@ export const FAQ = () => {
             >
               <button
                 onClick={() => toggle(index)}
-                className="w-full px-[1.2vw] py-[0.6vw] flex justify-between items-center text-left"
+                className="
+                  w-full
+                  flex
+                  justify-between
+                  items-center
+                  text-left
+
+                  px-[1.5vw]
+                  sm:px-[1.5vw]
+                  md:[1.5vw]
+                  lg:px-[1.5vw]
+                  xl:px-[1.5vw]
+                  2xl:px-[1.5vw]
+
+                  py-[0.6vw]
+                  sm:py-[0.6vw]
+                  md:py-[0.6vw]
+                  lg:py-[0.6vw]
+                  xl:py-[0.6vw]
+                  2xl:py-[0.6vw]"
               >
                 <span
                   className="
                     font-medium
-                    text-[2.8vw]
-                    sm:text-[2.4vw]
-                    md:text-[1.8vw]
-                    lg:text-[1.5vw]
-                    xl:text-[1.2vw]
+                    text-[3.4vw]
+                    sm:text-[2.8vw]
+                    md:text-[2vw]
+                    lg:text-[1.6vw]
+                    xl:text-[1.4vw]
                     2xl:text-[1.2vw]"
                 >
                   {item.question}
@@ -101,15 +120,16 @@ export const FAQ = () => {
                   >
                     <div
                       className="
-                        px-[1vw]
-                        pt-[0.5vw]
-                        pb-[1vw]
                         leading-relaxed                    
-                        text-[2.4vw]
-                        sm:text-[2vw]
-                        md:text-[1.6vw]
-                        lg:text-[1.6vw]
-                        xl:text-[1.3vw]
+                        text-[2.8vw]
+
+                        px-[1.5vw]
+                        py-[1vw]
+
+                        sm:text-[2.4vw]
+                        md:text-[1.8vw]
+                        lg:text-[1.4vw]
+                        xl:text-[1.2vw]
                         2xl:text-[1vw]"
                     >
                       {item.answer}

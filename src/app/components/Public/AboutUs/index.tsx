@@ -3,14 +3,15 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { useIsMobile } from "@/app/hooks";
 import { mentors } from "@/app/utils/mock";
 
 import { Mentor, MentorCard } from "../Cards/MentorCard";
 
-import "swiper/css/navigation";
 import "swiper/css";
+import "swiper/css/navigation";
 
 export const AboutUs = () => {
   const isMobile = useIsMobile();
@@ -56,19 +57,30 @@ export const AboutUs = () => {
 
       {isMobile ? (
         <Swiper
+          loop={true}
           modules={[Navigation, Autoplay]}
           spaceBetween={24}
           slidesPerView={1}
-          autoplay={{ delay: 8000 }}
-          navigation
-          className="p-[1vw]"
+          autoplay={{ delay: 4000 }}
+          className="relative p-[1vw]"
           breakpoints={{
             480: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 2 },
             1440: { slidesPerView: 3 },
           }}
+          navigation={{
+            prevEl: ".custom-swiper-button-prev",
+            nextEl: ".custom-swiper-button-next",
+          }}
         >
+          <div className="custom-swiper-button-prev absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-white/10 rounded-full hover:bg-white/20 cursor-pointer transition z-10">
+            <ChevronLeft className="text-white w-6 h-6" />
+          </div>
+          <div className="custom-swiper-button-next absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-white/10 rounded-full hover:bg-white/20 cursor-pointer transition z-10">
+            <ChevronRight className="text-white w-6 h-6" />
+          </div>
+
           {mentors.map((data: Mentor, idx) => (
             <SwiperSlide key={idx}>
               <MentorCard data={data} />
