@@ -84,9 +84,9 @@ export const FAQ = () => {
                 </span>
 
                 {isOpen ? (
-                  <Minus className="w-[1.5vw] h-[1.5vw]" />
+                  <Minus className="w-[20px] h-[20px]" />
                 ) : (
-                  <Plus className="w-[1.5vw] h-[1.5vw]" />
+                  <Plus className="w-[20px] h-[20px]" />
                 )}
               </button>
 
