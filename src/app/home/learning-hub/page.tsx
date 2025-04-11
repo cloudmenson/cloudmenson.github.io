@@ -3,10 +3,8 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 
-import { getFunctions, httpsCallable } from "firebase/functions";
-
-import { db, app } from "@/app/lib/firebase";
-// import { FallbackImage } from "@/app/components";
+import { db } from "@/app/lib/firebase";
+import { FallbackImage } from "@/app/components";
 
 type Article = {
   id: string;
@@ -33,21 +31,6 @@ export default function LearningHub() {
     fetchArticles();
   }, []);
 
-  const functionsInstance = getFunctions(app, "europe-west1");
-  const setAdminFunction = httpsCallable(functionsInstance, "setAdmin");
-
-  const makeUserAdmin = async () => {
-    try {
-      const result = await setAdminFunction({
-        uid: "dUBvcL9Hv7bJdoXCMcupAYwilup1",
-      });
-
-      console.log(result);
-    } catch (error) {
-      console.error("Помилка встановлення адміністраторського статусу:", error);
-    }
-  };
-
   return (
     <section
       className="
@@ -72,12 +55,13 @@ export default function LearningHub() {
             className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 break-inside-avoid"
           >
             <div className="relative w-full min-h-[200px] max-h-fit">
-              {/* <FallbackImage
-                fill
-                src={article.image}
-                alt={article.title}
-                className="object-cover"
-              /> */}
+              {article.image && (
+                <FallbackImage
+                  src={article.image}
+                  alt="Image"
+                  className="object-cover w-full h-full"
+                />
+              )}
 
               {article.tag && (
                 <span className="absolute top-2 right-2 bg-black text-white text-xs px-2 py-1 rounded">
@@ -102,10 +86,6 @@ export default function LearningHub() {
           </div>
         ))}
       </div>
-
-      <button type="button" className="w-full bg-white" onClick={makeUserAdmin}>
-        makeUserAdmin
-      </button>
     </section>
   );
 }

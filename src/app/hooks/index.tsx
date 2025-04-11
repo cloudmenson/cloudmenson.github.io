@@ -1,4 +1,5 @@
-import { useSmoothScroll } from "./useSmoothScroll";
+import { useIsMobile } from "./useIsMobile";
 import { useOutsideClick } from "./useOutsideClick";
+import { useSmoothScroll } from "./useSmoothScroll";
 
-export { useSmoothScroll, useOutsideClick };
+export { useSmoothScroll, useOutsideClick, useIsMobile };

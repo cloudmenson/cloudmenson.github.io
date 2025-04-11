@@ -29,31 +29,19 @@ export const CourseCard = ({ data, duration }: ICourseCard) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration, ease: "easeOut" }}
       className={cn(
-        `relative
-        flex-1
-        p-[2vw]
-        border
-        border-white/20
-        rounded-xl
-        bg-white/10
-        backdrop-blur-md
-        shadow-md
-        hover:shadow-xl
-        transition-all
-        text-white
-        overflow-hidden`,
-        data.title !== "Aviator" && "mt-[2vw]"
+        "relative flex flex-col p-6 border border-white/20 rounded-xl bg-white/10 backdrop-blur-md shadow-md hover:shadow-xl transition-all text-white overflow-hidden",
+        data.title !== "Aviator" && "mt-6"
       )}
     >
       <div
         className={cn(
-          "absolute top-0 left-0 w-full h-[5px] bg-gradient-to-r",
+          "absolute top-0 left-0 w-full h-1 bg-gradient-to-r",
           data.gradient
         )}
       />
 
       <div className="flex flex-col h-full">
-        <div className="mb-[1vw]">
+        <div className="mb-4">
           {data.Icon && (
             <data.Icon
               className={cn(
@@ -64,7 +52,8 @@ export const CourseCard = ({ data, duration }: ICourseCard) => {
                 lg:w-[3.5vw]
                 xl:w-[3.5vw]
                 2xl:w-[3vw]
-                h-auto`,
+                h-auto
+            `,
                 data.color
               )}
             />
@@ -110,7 +99,7 @@ export const CourseCard = ({ data, duration }: ICourseCard) => {
           ))}
         </ul>
 
-        <p className={cn("text-[2vw] font-bold mb-[1vw] mt-auto", data.color)}>
+        <p className={cn("text-xl font-bold mb-2 mt-auto", data.color)}>
           ${data.price}
         </p>
 
@@ -118,7 +107,7 @@ export const CourseCard = ({ data, duration }: ICourseCard) => {
           whileTap={{ scale: 0.98 }}
           whileHover={{ scale: 1.02 }}
           className={cn(
-            `text-[1vw] px-[2vw] py-[0.8vw] cursor-pointer rounded-full bg-gradient-to-r text-white font-semibold hover:bg-gray-200 transition-colors`,
+            "text-sm px-4 py-2 cursor-pointer rounded-full bg-gradient-to-r text-white font-semibold hover:bg-gray-200 transition-colors",
             data.gradient
           )}
         >

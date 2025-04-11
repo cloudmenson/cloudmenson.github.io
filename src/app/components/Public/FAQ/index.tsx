@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { questions } from "@/app/utils/mock";
 
@@ -19,7 +19,18 @@ export const FAQ = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="max-w-[70%] w-full py-[5vw] px-[2vw] mx-auto text-section-text"
+      className="
+        w-full
+        py-[5vw]
+        px-[2vw]
+        mx-auto
+        text-section-text
+        max-w-[90%]
+        sm:max-w-[80%]
+        md:max-w-[80%]
+        lg:max-w-[80%]
+        xl:max-w-[80%]
+        2xl:max-w-[70%]"
     >
       <h2
         className="
@@ -36,7 +47,15 @@ export const FAQ = () => {
         FAQ
       </h2>
 
-      <div className="space-y-[1vw]">
+      <div
+        className="
+        space-y-[2vw]
+        sm:space-y-[1.8vw]
+        md:space-y-[1.5vw]
+        lg:space-y-[1.3vw]
+        xl:space-y-[1.2vw]
+        2xl:space-y-[1vw]"
+      >
         {questions.map((item, index) => {
           const isOpen = openIndex === index;
           return (
@@ -51,7 +70,16 @@ export const FAQ = () => {
                 onClick={() => toggle(index)}
                 className="w-full px-[1.2vw] py-[0.6vw] flex justify-between items-center text-left"
               >
-                <span className="text-[1.2vw] font-medium">
+                <span
+                  className="
+                    font-medium
+                    text-[2.5vw]
+                    sm:text-[1.8vw]
+                    md:text-[1.5vw]
+                    lg:text-[1.5vw]
+                    xl:text-[1.2vw]
+                    2xl:text-[1.2vw]"
+                >
                   {item.question}
                 </span>
 
@@ -71,7 +99,19 @@ export const FAQ = () => {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                   >
-                    <div className="px-[1vw] pt-[0.5vw] pb-[1vw] text-[1vw] leading-relaxed">
+                    <div
+                      className="
+                        px-[1vw]
+                        pt-[0.5vw]
+                        pb-[1vw]
+                        leading-relaxed                    
+                        text-[2.3vw]
+                        sm:text-[1.8vw]
+                        md:text-[1.5vw]
+                        lg:text-[1.5vw]
+                        xl:text-[1.2vw]
+                        2xl:text-[1vw]"
+                    >
                       {item.answer}
                     </div>
                   </motion.div>

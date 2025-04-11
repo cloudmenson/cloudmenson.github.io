@@ -5,12 +5,20 @@ import Image from "next/image";
 // import Link from "next/link";
 
 import { Google, Signin } from "../assets";
-import { useFirebaseLogin } from "../hooks/useAuth";
+import { useEmailPasswordAuth } from "../hooks/useAuth";
+import { useFirebaseLogin } from "../hooks/useAuthWithGoogle";
 
 export default function SignInPage() {
   const { signInWithGoogle } = useFirebaseLogin();
+  const { signInWithEmail } = useEmailPasswordAuth();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    await signInWithEmail(email, password);
+  };
 
   return (
     <main className="min-h-screen flex overflow-hidden text-black">
@@ -54,7 +62,7 @@ export default function SignInPage() {
 
           <button
             type="button"
-            // onClick={signInWithGoogle}
+            onClick={handleSubmit}
             className="w-full bg-blue-600 text-white py-2 px-4 mb-[1.5vw] rounded hover:bg-blue-700 transition"
           >
             Увійти

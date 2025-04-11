@@ -1,18 +1,19 @@
 "use client";
 
 import React from "react";
-import { useMediaQuery } from "react-responsive";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 
+import { useIsMobile } from "@/app/hooks";
 import { mentors } from "@/app/utils/mock";
+
 import { Mentor, MentorCard } from "../Cards/MentorCard";
 
-import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css";
 
 export const AboutUs = () => {
-  const isMobile = useMediaQuery({ maxWidth: 1440 });
+  const isMobile = useIsMobile();
 
   return (
     <section className="py-10 px-4 sm:px-6 md:px-8 lg:px-[2vw] max-w-[90vw] mx-auto text-white">

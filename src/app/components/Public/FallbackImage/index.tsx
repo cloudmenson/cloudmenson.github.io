@@ -13,9 +13,10 @@ export const FallbackImage = (props: ImageProps) => {
   return (
     <Image
       {...props}
+      fill
       src={src}
-      onError={() => setSrc(fallbackSrc)}
       alt={props.alt || "Image"}
+      onError={() => setSrc(fallbackSrc)}
     />
   );
 };

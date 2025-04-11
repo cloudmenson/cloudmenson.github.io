@@ -1,6 +1,6 @@
 import { PrivateSidebar } from "../components/Private/PrivateSidebar";
 
-export default function UserLayout({
+export default function HomeLayout({
   children,
 }: {
   children: React.ReactNode;
