@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { cn } from "@/app/utils/tailwind-merge";
 import { LucideIcon } from "lucide-react";
+import { useIsMobile } from "@/app/hooks";
 
 export interface ICourse {
   link: string;
@@ -22,6 +23,8 @@ interface ICourseCard {
 }
 
 export const CourseCard = ({ data, duration }: ICourseCard) => {
+  const isMobile = useIsMobile("(max-width: 768px)");
+
   return (
     <motion.div
       viewport={{ once: true }}
@@ -30,7 +33,7 @@ export const CourseCard = ({ data, duration }: ICourseCard) => {
       transition={{ duration, ease: "easeOut" }}
       className={cn(
         "relative flex flex-col p-6 border border-white/20 rounded-xl bg-white/10 backdrop-blur-md shadow-md hover:shadow-xl transition-all text-white overflow-hidden",
-        data.title !== "Aviator" && "mt-6"
+        data.title !== "Aviator" && !isMobile && "mt-6"
       )}
     >
       <div
@@ -63,10 +66,10 @@ export const CourseCard = ({ data, duration }: ICourseCard) => {
         <h3
           className={cn(
             `
-            text-[3.2vw]
-            sm:text-[2vw]
-            md:text-[2vw]
-            lg:text-[2vw]
+            text-[5vw]
+            sm:text-[3vw]
+            md:text-[2.5vw]
+            lg:text-[2.2vw]
             xl:text-[1.8vw]
             2xl:text-[1.6vw]
             font-semibold
@@ -81,8 +84,8 @@ export const CourseCard = ({ data, duration }: ICourseCard) => {
         <ul
           className={cn(
             `
-            text-[3.2vw]
-            sm:text-[1.2vw]
+            text-[3vw]
+            sm:text-[2vw]
             md:text-[1.5vw]
             lg:text-[1.2vw]
             xl:text-[1.2vw]
@@ -91,7 +94,7 @@ export const CourseCard = ({ data, duration }: ICourseCard) => {
             list-disc
             list-inside
             space-y-[0.5vw]
-            mb-[1vw]`
+            mb-[2vw]`
           )}
         >
           {data.benefits.map((benefit: string, idx: number) => (
@@ -99,7 +102,22 @@ export const CourseCard = ({ data, duration }: ICourseCard) => {
           ))}
         </ul>
 
-        <p className={cn("text-xl font-bold mb-2 mt-auto", data.color)}>
+        <p
+          className={cn(
+            `
+            font-bold
+            mb-2
+            mt-auto
+            text-[6vw]
+            sm:text-[3.2vw]
+            md:text-[2.5vw]
+            lg:text-[2vw]
+            xl:text-[2vw]
+            2xl:text-[2vw]
+           `,
+            data.color
+          )}
+        >
           ${data.price}
         </p>
 

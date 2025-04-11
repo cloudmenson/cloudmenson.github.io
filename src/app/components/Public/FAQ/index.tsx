@@ -26,11 +26,11 @@ export const FAQ = () => {
         mx-auto
         text-section-text
         max-w-[90%]
-        sm:max-w-[80%]
-        md:max-w-[80%]
-        lg:max-w-[80%]
-        xl:max-w-[80%]
-        2xl:max-w-[70%]"
+        sm:max-w-[90%]
+        md:max-w-[90%]
+        lg:max-w-[90%]
+        xl:max-w-[90%]
+        2xl:max-w-[80%]"
     >
       <h2
         className="
@@ -73,9 +73,9 @@ export const FAQ = () => {
                 <span
                   className="
                     font-medium
-                    text-[2.5vw]
-                    sm:text-[1.8vw]
-                    md:text-[1.5vw]
+                    text-[2.8vw]
+                    sm:text-[2.4vw]
+                    md:text-[1.8vw]
                     lg:text-[1.5vw]
                     xl:text-[1.2vw]
                     2xl:text-[1.2vw]"
@@ -105,11 +105,11 @@ export const FAQ = () => {
                         pt-[0.5vw]
                         pb-[1vw]
                         leading-relaxed                    
-                        text-[2.3vw]
-                        sm:text-[1.8vw]
-                        md:text-[1.5vw]
-                        lg:text-[1.5vw]
-                        xl:text-[1.2vw]
+                        text-[2.4vw]
+                        sm:text-[2vw]
+                        md:text-[1.6vw]
+                        lg:text-[1.6vw]
+                        xl:text-[1.3vw]
                         2xl:text-[1vw]"
                     >
                       {item.answer}
