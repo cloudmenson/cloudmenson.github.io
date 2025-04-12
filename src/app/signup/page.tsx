@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { Signin, Google } from "@/app/assets";
+import { useSignUp } from "@/app/hooks/useSignUp";
 import { useFirebaseLogin } from "@/app/hooks/useAuthWithGoogle";
 
 export default function SignupPage() {
@@ -13,11 +14,11 @@ export default function SignupPage() {
   const [password, setPassword] = useState("");
 
   const { signInWithGoogle } = useFirebaseLogin();
+  const { signUpWithEmail } = useSignUp();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Логіка реєстрації:
-    console.log("Registering user:", { email, password });
+    await signUpWithEmail(name, email, password);
   };
 
   return (

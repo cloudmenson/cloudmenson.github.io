@@ -3,24 +3,17 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+import { useResetPassword } from "../hooks/useResetPassword";
 
 export default function ResetPasswordPage() {
   const { t } = useTranslation();
+  const { resetPassword } = useResetPassword();
 
   const [email, setEmail] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    try {
-      const auth = getAuth();
-      await sendPasswordResetEmail(auth, email);
-
-      console.log("Password was sended");
-    } catch (err) {
-      console.log("Error resetting password:", err);
-    }
+    await resetPassword(email);
   };
 
   return (

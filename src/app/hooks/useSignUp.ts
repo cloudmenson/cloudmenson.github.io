@@ -1,31 +1,27 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 import { auth } from "@/app/lib/firebase";
 import { notifyError } from "@/app/components";
 import { useLoadingStore } from "@/app/store/loadingStore";
 
-export const useAuth = () => {
+export const useSignUp = () => {
   const router = useRouter();
   const { setLoading } = useLoadingStore.getState();
 
-  const signInWithEmail = async (email: string, password: string) => {
+  const signUpWithEmail = async (
+    name: string,
+    email: string,
+    password: string
+  ) => {
     try {
       setLoading(true);
 
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
+      await createUserWithEmailAndPassword(auth, email, password);
 
-      if (userCredential.user.uid === "dUBvcL9Hv7bJdoXCMcupAYwilup1") {
-        router.push("/admin");
-      } else {
-        router.push("/home");
-      }
+      router.push("/home");
     } catch (err: unknown) {
       if (err instanceof Error) {
         notifyError(err.message);
@@ -37,5 +33,5 @@ export const useAuth = () => {
     }
   };
 
-  return { signInWithEmail };
+  return { signUpWithEmail };
 };

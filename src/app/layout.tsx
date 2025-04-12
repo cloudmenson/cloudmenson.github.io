@@ -1,6 +1,8 @@
 import { I18nProvider } from "./providers/i18nProvider";
 import { AuthProvider } from "./providers/AuthProvider";
 
+import { ToastNotifications } from "@/app/components";
+
 import "./globals.css";
 
 export default function RootLayout({
@@ -14,6 +16,8 @@ export default function RootLayout({
         <I18nProvider>
           <AuthProvider>
             <main>{children}</main>
+
+            <ToastNotifications />
           </AuthProvider>
         </I18nProvider>
       </body>

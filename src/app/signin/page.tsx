@@ -6,12 +6,12 @@ import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
 import { Google, Signin } from "@/app/assets";
-import { useEmailPasswordAuth } from "@/app/hooks/useAuth";
+import { useAuth } from "@/app/hooks/useAuth";
 import { useFirebaseLogin } from "@/app/hooks/useAuthWithGoogle";
 
 export default function SigninPage() {
+  const { signInWithEmail } = useAuth();
   const { signInWithGoogle } = useFirebaseLogin();
-  const { signInWithEmail } = useEmailPasswordAuth();
 
   const { t } = useTranslation();
   const [email, setEmail] = useState("");

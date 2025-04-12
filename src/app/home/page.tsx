@@ -4,8 +4,8 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import { useAuthStore } from "../store/modalStore";
-import { useFirebaseSignOut } from "../hooks/useSignOut";
+import { useAuthStore } from "@/app/store/modalStore";
+import { useFirebaseSignOut } from "@/app/hooks/useSignOut";
 
 export default function Home() {
   const { signOutHandler } = useFirebaseSignOut();

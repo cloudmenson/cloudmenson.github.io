@@ -30,13 +30,12 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           });
         } else {
           setUser(null);
-          router.push("/");
         }
       });
 
       return () => unsubscribe();
     });
-  }, []);
+  }, [auth, router, setUser]);
 
   return <>{children}</>;
 };

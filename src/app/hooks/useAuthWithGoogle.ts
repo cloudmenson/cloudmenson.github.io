@@ -3,8 +3,9 @@
 import { useRouter } from "next/navigation";
 import { signInWithPopup } from "firebase/auth";
 
-import { useLoadingStore } from "../store/loadingStore";
+import { notifyError } from "@/app/components";
 import { auth, googleProvider } from "@/app/lib/firebase";
+import { useLoadingStore } from "@/app/store/loadingStore";
 
 export const useFirebaseLogin = () => {
   const router = useRouter();
@@ -19,9 +20,9 @@ export const useFirebaseLogin = () => {
       router.push("/home");
     } catch (err: unknown) {
       if (err instanceof Error) {
-        console.error("Error:", err.message);
+        notifyError(err.message);
       } else {
-        console.error("Unknown error", err);
+        notifyError("" + err);
       }
     } finally {
       setLoading(true);
