@@ -19,18 +19,13 @@ export interface ICourse {
 
 interface ICourseCard {
   data: ICourse;
-  duration: number;
 }
 
-export const CourseCard = ({ data, duration }: ICourseCard) => {
+export const CourseCard = ({ data }: ICourseCard) => {
   const isMobile = useIsMobile("(max-width: 1023px)");
 
   return (
-    <motion.div
-      viewport={{ once: true }}
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration, ease: "easeOut" }}
+    <div
       className={cn(
         "relative flex flex-col p-6 border border-white/20 rounded-xl bg-white/10 backdrop-blur-md shadow-md hover:shadow-xl transition-all text-white overflow-hidden",
         data.title !== "Aviator" && !isMobile && "mt-6"
@@ -49,7 +44,7 @@ export const CourseCard = ({ data, duration }: ICourseCard) => {
             <data.Icon
               className={cn(
                 `
-                w-[6vw]
+                w-[6.5vw]
                 sm:w-[5vw]
                 md:w-[3.5vw]
                 lg:w-[3.5vw]
@@ -84,7 +79,7 @@ export const CourseCard = ({ data, duration }: ICourseCard) => {
         <ul
           className={cn(
             `
-            text-[3vw]
+            text-[3.4vw]
             sm:text-[2.5vw]
             md:text-[1.5vw]
             lg:text-[1.5vw]
@@ -94,8 +89,6 @@ export const CourseCard = ({ data, duration }: ICourseCard) => {
             list-disc
             list-inside
             space-y-[0.5vw]
-
-
             mb-[6vw]
             sm:mb-[3vw]
             md:mb-[1.5vw]
@@ -115,7 +108,7 @@ export const CourseCard = ({ data, duration }: ICourseCard) => {
             font-bold
             mb-2
             mt-auto
-            text-[4.8vw]
+            text-[5vw]
             sm:text-[4vw]
             md:text-[2.5vw]
             lg:text-[2.4vw]
@@ -154,6 +147,6 @@ export const CourseCard = ({ data, duration }: ICourseCard) => {
           <Link href="/signin">{data.buttonText}</Link>
         </motion.button>
       </div>
-    </motion.div>
+    </div>
   );
 };

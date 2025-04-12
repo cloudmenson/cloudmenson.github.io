@@ -14,11 +14,7 @@ export const FAQ = () => {
   };
 
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+    <section
       className="
         w-full
         py-[5vw]
@@ -59,11 +55,8 @@ export const FAQ = () => {
         {faq.map((item, index) => {
           const isOpen = openIndex === index;
           return (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
               className="border border-white/20 rounded-lg overflow-hidden transition-all duration-300 bg-white/5 hover:bg-white/10"
             >
               <button
@@ -74,14 +67,13 @@ export const FAQ = () => {
                   justify-between
                   items-center
                   text-left
-
+                  cursor-pointer
                   px-[3vw]
                   sm:px-[1.5vw]
                   md:[1.5vw]
                   lg:px-[1.6vw]
                   xl:px-[1.5vw]
                   2xl:px-[1.5vw]
-
                   py-[1.5vw]
                   sm:py-[1vw]
                   md:py-[0.6vw]
@@ -133,7 +125,7 @@ export const FAQ = () => {
                         lg:py-[0.8vw]
                         xl:py-[0.6vw]
                         2xl:py-[0.6vw]
-                        text-[3vw]
+                        text-[3.2vw]
                         sm:text-[2.5vw]
                         md:text-[2.2vw]
                         lg:text-[1.4vw]
@@ -145,10 +137,10 @@ export const FAQ = () => {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </motion.div>
+            </div>
           );
         })}
       </div>
-    </motion.section>
+    </section>
   );
 };

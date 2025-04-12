@@ -37,7 +37,7 @@ export const Course = () => {
           2xl:gap-[2vw]"
         >
           {courses.map((course, idx) => (
-            <CourseCard key={idx} data={course} duration={0.6 + idx * 0.2} />
+            <CourseCard key={idx} data={course} />
           ))}
         </div>
       </div>

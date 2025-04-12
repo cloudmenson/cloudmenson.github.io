@@ -8,8 +8,6 @@ interface IBenefitCard {
   title: string;
   subtitle: string;
   className?: string;
-  textInitial?: number;
-  initialImage?: number;
   imageSrc: StaticImageData;
 }
 
@@ -18,11 +16,9 @@ export const BenefitCard = ({
   imageSrc,
   subtitle,
   className,
-  textInitial,
-  initialImage,
 }: IBenefitCard) => {
   return (
-    <motion.div
+    <div
       className={cn(
         `
         flex
@@ -34,10 +30,6 @@ export const BenefitCard = ({
       `,
         className
       )}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      initial={{ opacity: 0, x: initialImage }}
     >
       <motion.div
         whileTap={{ scale: 0.98 }}
@@ -57,10 +49,7 @@ export const BenefitCard = ({
             bg-center"
       />
 
-      <motion.div
-        viewport={{ once: true }}
-        initial={{ x: textInitial, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
+      <div
         className="flex flex-col gap-[0.5vw] items-start sm:items-center md:items-start w-full md:w-[unset]"
       >
         <p
@@ -86,7 +75,7 @@ export const BenefitCard = ({
         >
           {subtitle}
         </p>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 };

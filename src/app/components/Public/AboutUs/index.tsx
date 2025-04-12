@@ -58,11 +58,11 @@ export const AboutUs = () => {
       {isMobile ? (
         <Swiper
           loop={true}
-          modules={[Navigation, Autoplay]}
           spaceBetween={24}
           slidesPerView={1}
           autoplay={{ delay: 4000 }}
           className="relative p-[1vw]"
+          modules={[Navigation, Autoplay]}
           breakpoints={{
             480: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
@@ -82,8 +82,10 @@ export const AboutUs = () => {
           </div>
 
           {mentors.map((data: Mentor, idx) => (
-            <SwiperSlide key={idx}>
-              <MentorCard data={data} />
+            <SwiperSlide key={idx} className="!h-auto flex items-stretch">
+              <div className="flex-1 h-full">
+                <MentorCard data={data} />
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>

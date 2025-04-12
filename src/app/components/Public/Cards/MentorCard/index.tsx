@@ -32,6 +32,7 @@ export const MentorCard = ({ data }: IMentorCard) => {
       lg:p-[1.5vw]
       backdrop-blur-sm
       h-full
+      justify-between
       w-full"
     >
       <div className="w-[35vw] sm:w-[25vw] md:w-[18vw] lg:w-[12vw] aspect-square bg-gray-300 rounded-full mb-4 overflow-hidden">

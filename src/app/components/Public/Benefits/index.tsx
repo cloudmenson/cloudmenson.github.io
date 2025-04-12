@@ -63,8 +63,6 @@ export const Benefits = () => {
               title={benefit.title}
               imageSrc={benefit.src}
               subtitle={benefit.subtitle}
-              initialImage={idx % 2 === 1 ? 50 : -50}
-              textInitial={idx % 2 === 1 ? 100 : -100}
               className={cn(
                 idx % 2 === 1
                   ? "md:flex-row-reverse flex-col"
