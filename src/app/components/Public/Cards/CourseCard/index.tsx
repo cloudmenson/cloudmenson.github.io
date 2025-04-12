@@ -2,9 +2,11 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { cn } from "@/app/utils/tailwind-merge";
 import { LucideIcon } from "lucide-react";
+import { cn } from "@/app/utils/tailwind-merge";
+
 import { useIsMobile } from "@/app/hooks";
+import { useAuthStore } from "@/app/store/modalStore";
 
 export interface ICourse {
   link: string;
@@ -22,7 +24,10 @@ interface ICourseCard {
 }
 
 export const CourseCard = ({ data }: ICourseCard) => {
+  const user = useAuthStore((state) => state.user);
   const isMobile = useIsMobile("(max-width: 1023px)");
+
+  const redirectPath = user ? "/home/courses" : "/signin";
 
   return (
     <div
@@ -144,7 +149,7 @@ export const CourseCard = ({ data }: ICourseCard) => {
             data.gradient
           )}
         >
-          <Link href="/signin">{data.buttonText}</Link>
+          <Link href={redirectPath}>{data.buttonText}</Link>
         </motion.button>
       </div>
     </div>
