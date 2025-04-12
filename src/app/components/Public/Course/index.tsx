@@ -24,11 +24,17 @@ export const Course = () => {
 
         <div
           className="
-          grid grid-cols-1  
-          sm:grid-cols-2 
-          md:grid-cols-3
-          xl:gap-8
-          gap-[2vw]"
+          grid grid-cols-1 
+          md:grid-cols-1
+          lg:grid-cols-3 
+          xl:grid-cols-3
+          2xl:grid-cols-3 
+          
+          gap-[5vw]
+          md:gap-[2.2vw]
+          lg:gap-[2vw]
+          xl:gap-[2vw]
+          2xl:gap-[2vw]"
         >
           {courses.map((course, idx) => (
             <CourseCard key={idx} data={course} duration={0.6 + idx * 0.2} />

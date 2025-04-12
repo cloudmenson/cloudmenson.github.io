@@ -23,7 +23,7 @@ interface ICourseCard {
 }
 
 export const CourseCard = ({ data, duration }: ICourseCard) => {
-  const isMobile = useIsMobile("(max-width: 768px)");
+  const isMobile = useIsMobile("(max-width: 1023px)");
 
   return (
     <motion.div
@@ -49,8 +49,8 @@ export const CourseCard = ({ data, duration }: ICourseCard) => {
             <data.Icon
               className={cn(
                 `
-                w-[5vw]
-                sm:w-[3.5vw]
+                w-[6vw]
+                sm:w-[5vw]
                 md:w-[3.5vw]
                 lg:w-[3.5vw]
                 xl:w-[3.5vw]
@@ -67,9 +67,9 @@ export const CourseCard = ({ data, duration }: ICourseCard) => {
           className={cn(
             `
             text-[5vw]
-            sm:text-[3vw]
+            sm:text-[4vw]
             md:text-[2.5vw]
-            lg:text-[2.2vw]
+            lg:text-[2.4vw]
             xl:text-[1.8vw]
             2xl:text-[1.6vw]
             font-semibold
@@ -85,16 +85,23 @@ export const CourseCard = ({ data, duration }: ICourseCard) => {
           className={cn(
             `
             text-[3vw]
-            sm:text-[2vw]
+            sm:text-[2.5vw]
             md:text-[1.5vw]
-            lg:text-[1.2vw]
+            lg:text-[1.5vw]
             xl:text-[1.2vw]
             2xl:text-[1vw]
             leading-relaxed
             list-disc
             list-inside
             space-y-[0.5vw]
-            mb-[2vw]`
+
+
+            mb-[6vw]
+            sm:mb-[3vw]
+            md:mb-[1.5vw]
+            lg:mb-[1.5vw]
+            xl:mb-[1.2vw]
+            2xl:mb-[1vw]`
           )}
         >
           {data.benefits.map((benefit: string, idx: number) => (
@@ -108,10 +115,10 @@ export const CourseCard = ({ data, duration }: ICourseCard) => {
             font-bold
             mb-2
             mt-auto
-            text-[6vw]
-            sm:text-[3.2vw]
+            text-[4.8vw]
+            sm:text-[4vw]
             md:text-[2.5vw]
-            lg:text-[2vw]
+            lg:text-[2.4vw]
             xl:text-[2vw]
             2xl:text-[2vw]
            `,
