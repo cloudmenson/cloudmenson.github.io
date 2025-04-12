@@ -35,7 +35,7 @@ export const AboutUs = () => {
 
       <p
         className="
-        text-[3.5vw]
+        text-[3.2vw]
         sm:text-[2.8vw]
         md:text-[2.5vw]
         lg:text-[1.8vw]

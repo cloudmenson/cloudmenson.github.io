@@ -1,68 +1,80 @@
 "use client";
 
-import { motion } from "framer-motion";
-
-import { Benefit1, Benefit2, Benefit3, Benefit4 } from "@/app/assets";
+import { benefits } from "@/app/utils/mock";
+import { BenefitCard } from "@/app/components";
+import { cn } from "@/app/utils/tailwind-merge";
 
 export const Benefits = () => {
   return (
-    <section className="px-[2vw] pb-[4vw] pt-[10vw] bg-section-bg w-full flex justify-center">
-      <div className="w-full max-w-[60vw] flex flex-col items-center gap-y-[4vw]">
-        <div className="w-full flex justify-start">
-          <motion.div
-            viewport={{ once: true }}
-            whileTap={{ scale: 0.98 }}
-            whileHover={{ scale: 1.03 }}
-            transition={{ duration: 0.6 }}
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            className="min-h-[25vw] w-[35vw] p-[2vw] text-white rounded-2xl shadow-lg text-[1.2vw] font-medium bg-cover bg-center"
-            style={{ backgroundImage: `url(${Benefit3.src})` }}
-          >
-            Підтримка на кожному етапі підготовки
-          </motion.div>
-        </div>
-        <div className="w-full flex justify-end">
-          <motion.div
-            viewport={{ once: true }}
-            whileTap={{ scale: 0.98 }}
-            whileHover={{ scale: 1.03 }}
-            transition={{ duration: 0.6 }}
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            className="min-h-[25vw] w-[35vw] p-[2vw] text-white rounded-2xl shadow-lg text-[1.2vw] font-medium bg-cover bg-center"
-            style={{ backgroundImage: `url(${Benefit2.src})` }}
-          >
-            Справжні кейси та підготовка до співбесіди
-          </motion.div>
-        </div>
-        <div className="w-full flex justify-start">
-          <motion.div
-            viewport={{ once: true }}
-            whileTap={{ scale: 0.98 }}
-            whileHover={{ scale: 1.03 }}
-            transition={{ duration: 0.6 }}
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            className="min-h-[25vw] w-[35vw] p-[2vw] text-white rounded-2xl shadow-lg text-[1.2vw] font-medium bg-cover bg-center"
-            style={{ backgroundImage: `url(${Benefit1.src})` }}
-          >
-            Команда менторів з досвідом у великих авіалініях
-          </motion.div>
-        </div>
-        <div className="w-full flex justify-end">
-          <motion.div
-            viewport={{ once: true }}
-            whileTap={{ scale: 0.98 }}
-            whileHover={{ scale: 1.03 }}
-            transition={{ duration: 0.6 }}
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            className="min-h-[25vw] w-[35vw] p-[2vw] text-white rounded-2xl shadow-lg text-[1.2vw] font-medium bg-cover bg-center"
-            style={{ backgroundImage: `url(${Benefit4.src})` }}
-          >
-            Допомога з підготовкою резюме та виглядом
-          </motion.div>
+    <section
+      className="
+
+
+      py-[6.5vw]
+      sm:py-[5vw]
+      md:py-[3.5vw]
+      lg:py-[2.5vw]
+      xl:py-[2.5vw]
+      2xl:py-[5vw]
+
+      px-[6.5vw]
+      sm:px-[5vw]
+      md:px-[3.5vw]
+      lg:px-[2.5vw]
+      xl:px-[2.5vw]
+      2xl:px-[2vw]
+
+      bg-section-bg
+      w-full
+      flex
+      justify-center"
+    >
+      <div className="w-full max-w-screen-xl flex flex-col items-center gap-y-[4vw]">
+        <h2
+          className="
+          text-[6.5vw]
+          sm:text-[5vw]
+          md:text-[3.5vw]
+          lg:text-[2.5vw]
+          xl:text-[2.5vw]
+          2xl:text-[2.5vw]
+          font-bold
+          text-center
+          mb-[2vw]"
+        >
+          Benefits
+        </h2>
+
+        <div
+          className="
+          w-full
+          flex
+          gap-[8vw]
+          sm:gap-[3vw]
+          md:gap-[8vw]
+          lg:gap-[2.5vw]
+          xl:gap-[2.5vw]
+          2xl:gap-[2.5vw]
+
+
+          items-center
+          flex-col"
+        >
+          {benefits.map((benefit, idx) => (
+            <BenefitCard
+              key={idx}
+              title={benefit.title}
+              imageSrc={benefit.src}
+              subtitle={benefit.subtitle}
+              initialImage={idx % 2 === 1 ? 50 : -50}
+              textInitial={idx % 2 === 1 ? 100 : -100}
+              className={cn(
+                idx % 2 === 1
+                  ? "md:flex-row-reverse flex-col"
+                  : "md:flex-row flex-col"
+              )}
+            />
+          ))}
         </div>
       </div>
     </section>

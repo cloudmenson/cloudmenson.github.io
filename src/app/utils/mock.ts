@@ -1,6 +1,17 @@
 import { Clock, UserCheck, PenLine } from "lucide-react";
 
-import { Girl, Inst, Ksenia, Pavlo, Stan, TikTok, Window } from "../assets";
+import {
+  Inst,
+  Stan,
+  Pavlo,
+  Ksenia,
+  TikTok,
+  Benefit1,
+  Benefit2,
+  Benefit3,
+  Benefit4,
+  Benefit5,
+} from "@/app/assets";
 
 export const mentors = [
   {
@@ -83,49 +94,6 @@ export const questions = [
   },
 ];
 
-export const benefits = [
-  {
-    backBg: Girl,
-    title: "Title",
-    frontBg: Window,
-    backContent: "Content",
-    backTitle: "Back title",
-    frontContent: "Press to turn over",
-  },
-  {
-    backBg: Girl,
-    title: "Title",
-    frontBg: Window,
-    backContent: "Content",
-    backTitle: "Back title",
-    frontContent: "Press to turn over",
-  },
-  {
-    backBg: Girl,
-    title: "Title",
-    frontBg: Window,
-    backContent: "Content",
-    backTitle: "Back title",
-    frontContent: "Press to turn over",
-  },
-  {
-    backBg: Girl,
-    title: "Title",
-    frontBg: Window,
-    backContent: "Content",
-    backTitle: "Back title",
-    frontContent: "Press to turn over",
-  },
-  {
-    backBg: Girl,
-    title: "Title",
-    frontBg: Window,
-    backContent: "Content",
-    backTitle: "Back title",
-    frontContent: "Press to turn over",
-  },
-];
-
 export const courses = [
   {
     title: "Basic",
@@ -173,55 +141,30 @@ export const courses = [
   },
 ];
 
-// export const articles = [
-//   {
-//     id: 1,
-//     title:
-//       "Can You Help Me Improve My English? Can You Help Me Improve My English? Can You Help Me Improve My English? Can You Help Me Improve My English? Can You Help Me Improve My English? Can You Help Me Improve My English? Can You Help Me Improve My English?",
-//     author: "Anna",
-//     date: "1 day ago",
-//     image: "/images/learning1.jpg",
-//     tag: "fly",
-//   },
-//   {
-//     id: 2,
-//     title:
-//       "How I Passed the Final Stage of the Cabin Crew Interview with Qatar Airways, Emirates, and Etihad Emirates, and Etihad Emirates, and Etihad Emirates, and Etihad Emirates, and Etihad Emirates, and Etihad Emirates, and Etihad Emirates, and Etihad Emirates, and Etihad",
-//     author: "Tom",
-//     date: "19 days ago",
-//     image: "/images/learning2.jpg",
-//     tag: "final interview",
-//   },
-//   {
-//     id: 3,
-//     title: "Etihad Open Day 1: What to Expect",
-//     author: "Sophia",
-//     date: "99 days ago",
-//     image: "/images/learning3.jpg",
-//     tag: "Etihad",
-//   },
-//   {
-//     id: 4,
-//     title: "How to Apply",
-//     author: "Emily",
-//     date: "99 days ago",
-//     image: "/images/learning4.jpg",
-//     tag: "Etihad",
-//   },
-//   {
-//     id: 5,
-//     title: "Essential",
-//     author: "Emily",
-//     date: "99 days ago",
-//     image: "/images/learning5.jpg",
-//     tag: "preparation",
-//   },
-//   {
-//     id: 6,
-//     title: "Etihad Virtual Assessment – 2024 July Updates",
-//     author: "Emily",
-//     date: "99 days ago",
-//     image: "/images/learning6.jpg",
-//     tag: "Etihad",
-//   },
-// ];
+export const benefits = [
+  {
+    src: Benefit4,
+    title: "Тут може бути якийсь текст який описує шось",
+    subtitle: "Якщо треба тут також буде текст",
+  },
+  {
+    src: Benefit2,
+    title: "Тут може бути якийсь текст який описує шось",
+    subtitle: "Якщо треба тут також буде текст",
+  },
+  {
+    src: Benefit3,
+    title: "Тут може бути якийсь текст який описує шось",
+    subtitle: "Якщо треба тут також буде текст",
+  },
+  {
+    src: Benefit1,
+    title: "Тут може бути якийсь текст який описує шось",
+    subtitle: "Якщо треба тут також буде текст",
+  },
+  {
+    src: Benefit5,
+    title: "Тут може бути якийсь текст який описує шось",
+    subtitle: "Якщо треба тут також буде текст",
+  },
+];

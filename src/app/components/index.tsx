@@ -11,9 +11,11 @@ import { LangSelector } from "./Public/LangSelector";
 import { Loader } from "./Public/Loader";
 import { MentorCard } from "./Public/Cards/MentorCard";
 import { ScrollTo } from "./Public/ScrollTo";
+import { BenefitCard } from "./Public/Cards/BenefitCard";
 
 export {
   AboutUs,
+  BenefitCard,
   Benefits,
   Course,
   CourseCard,

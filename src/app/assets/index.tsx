@@ -2,6 +2,7 @@ import Benefit1 from "./png/benefits/benefit_1.jpg";
 import Benefit2 from "./png/benefits/benefit_2.jpg";
 import Benefit3 from "./png/benefits/benefit_3.jpg";
 import Benefit4 from "./png/benefits/benefit_4.jpg";
+import Benefit5 from "./png/benefits/benefit_5.jpg";
 import fallbackImage from "./png/fallbackImage.jpeg";
 import FlyHeader from "./png/133.png";
 import Girl from "./png/3.png";
@@ -20,6 +21,7 @@ export {
   Benefit2,
   Benefit3,
   Benefit4,
+  Benefit5,
   fallbackImage,
   FlyHeader,
   Girl,
