@@ -133,7 +133,7 @@ export const FAQ = () => {
                         lg:py-[0.8vw]
                         xl:py-[0.6vw]
                         2xl:py-[0.6vw]
-                        text-[2.8vw]
+                        text-[3vw]
                         sm:text-[2.5vw]
                         md:text-[2.2vw]
                         lg:text-[1.4vw]

@@ -8,22 +8,19 @@ export const Benefits = () => {
   return (
     <section
       className="
-
-
+      overflow-x-hidden
       py-[6.5vw]
       sm:py-[5vw]
       md:py-[3.5vw]
       lg:py-[2.5vw]
       xl:py-[2.5vw]
       2xl:py-[5vw]
-
       px-[6.5vw]
       sm:px-[5vw]
       md:px-[3.5vw]
       lg:px-[2.5vw]
       xl:px-[2.5vw]
       2xl:px-[2vw]
-
       bg-section-bg
       w-full
       flex
