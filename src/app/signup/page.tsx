@@ -39,20 +39,20 @@ export default function SignupPage() {
           <h1 className="text-2xl font-bold mb-4 text-center">Sign up</h1>
 
           <div className="mb-4">
-            <label className="block mb-1 font-medium">Name</label>
+            <label className="block mb-1 font-medium text-start">Name</label>
 
             <input
               required
               type="text"
               value={name}
-              placeholder="Ваше ім’я"
+              placeholder="Your name"
               onChange={(e) => setName(e.target.value)}
               className="w-full border border-gray-300 rounded px-3 py-2"
             />
           </div>
 
           <div className="mb-4">
-            <label className="block mb-1 font-medium">Email</label>
+            <label className="block mb-1 font-medium text-start">Email</label>
 
             <input
               required
@@ -65,7 +65,9 @@ export default function SignupPage() {
           </div>
 
           <div className="mb-6">
-            <label className="block mb-1 font-medium">Password</label>
+            <label className="block mb-1 font-medium text-start">
+              Password
+            </label>
 
             <input
               required
@@ -79,17 +81,17 @@ export default function SignupPage() {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition"
+            className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition cursor-pointer mb-[10px]"
           >
             Sign up
           </button>
 
-          <div className="text-gray-500 text-sm">or</div>
+          <p className="text-gray-500 text-sm mb-[10px]">or</p>
 
           <button
             type="button"
             onClick={signInWithGoogle}
-            className="flex items-center justify-center gap-2 border border-gray-300 rounded px-4 py-2 hover:bg-gray-100 w-full"
+            className="flex items-center justify-center gap-2 border border-gray-300 rounded px-4 py-2 hover:bg-gray-100 w-full cursor-pointer"
           >
             <Image
               width={20}

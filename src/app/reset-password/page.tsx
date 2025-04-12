@@ -49,14 +49,14 @@ export default function ResetPasswordPage() {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition"
+            className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition cursor-pointer mb-[30px]"
           >
             {t("Reset Password")}
           </button>
 
           <Link
             href="/signin"
-            className="text-sm underline block text-gray-600 mt-4 text-center"
+            className="text-sm underline block text-gray-600 text-center"
           >
             {t("Back to Sign in")}
           </Link>
