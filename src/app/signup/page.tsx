@@ -1,16 +1,18 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
-
-import { Signin } from "../assets";
-
 import Link from "next/link";
+import Image from "next/image";
+
+import { Signin, Google } from "@/app/assets";
+import { useFirebaseLogin } from "@/app/hooks/useAuthWithGoogle";
 
 export default function SignUpPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const { signInWithGoogle } = useFirebaseLogin();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,8 +21,8 @@ export default function SignUpPage() {
   };
 
   return (
-    <main className="min-h-screen flex overflow-hidden text-black">
-      <div className="relative w-1/2 hidden md:block">
+    <main className="h-screen flex overflow-hidden text-black">
+      <div className="relative w-1/2 hidden lg:block">
         <Image
           fill
           src={Signin}
@@ -32,12 +34,13 @@ export default function SignUpPage() {
       <div className="flex-1 flex items-center justify-center bg-white">
         <form
           onSubmit={handleSubmit}
-          className="max-w-[400px] w-[90%] md:w-[70%] p-6 rounded shadow"
+          className="max-w-[400px] w-[90%] md:w-[70%] p-6 rounded shadow space-y-6 text-center"
         >
-          <h1 className="text-2xl font-bold mb-4 text-center">Реєстрація</h1>
+          <h1 className="text-2xl font-bold mb-4 text-center">Sign up</h1>
 
           <div className="mb-4">
-            <label className="block mb-1 font-medium">Ім’я</label>
+            <label className="block mb-1 font-medium">Name</label>
+
             <input
               required
               type="text"
@@ -50,6 +53,7 @@ export default function SignUpPage() {
 
           <div className="mb-4">
             <label className="block mb-1 font-medium">Email</label>
+
             <input
               required
               type="email"
@@ -61,7 +65,8 @@ export default function SignUpPage() {
           </div>
 
           <div className="mb-6">
-            <label className="block mb-1 font-medium">Пароль</label>
+            <label className="block mb-1 font-medium">Password</label>
+
             <input
               required
               type="password"
@@ -74,13 +79,30 @@ export default function SignUpPage() {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 px-4 mb-[1.5vw] rounded hover:bg-blue-700 transition"
+            className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition"
           >
-            Зареєструватись
+            Sign up
           </button>
 
-          <Link className="underline flex justify-center" href={"/signin"}>
-            Вже маєте акаунт? Увійдіть
+          <div className="text-gray-500 text-sm">or</div>
+
+          <button
+            type="button"
+            onClick={signInWithGoogle}
+            className="flex items-center justify-center gap-2 border border-gray-300 rounded px-4 py-2 hover:bg-gray-100 w-full"
+          >
+            <Image
+              width={20}
+              height={20}
+              src={Google}
+              alt="Google"
+              loading="lazy"
+            />
+            <span>Sign up with Google</span>
+          </button>
+
+          <Link className="underline flex justify-center" href="/signin">
+            Already have an account? Sign in
           </Link>
         </form>
       </div>

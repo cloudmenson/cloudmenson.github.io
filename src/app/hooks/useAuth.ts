@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
 import { auth } from "@/app/lib/firebase";
-import { useLoadingStore } from "../store/loadingStore";
+import { useLoadingStore } from "@/app/store/loadingStore";
 
 export const useEmailPasswordAuth = () => {
   const router = useRouter();

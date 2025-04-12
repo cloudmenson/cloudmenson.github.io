@@ -3,12 +3,18 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+
 import { Button } from "../Button";
+import { useAuthStore } from "@/app/store/modalStore";
 
 export const Greetings = () => {
+  const user = useAuthStore((state) => state.user);
+
   const { t } = useTranslation();
 
   const video = "/videos/greetings.mp4";
+
+  const redirectPath = user ? "/home" : "/signin";
 
   return (
     <section className="min-h-screen w-full bg-cover bg-center relative overflow-hidden">
@@ -84,7 +90,7 @@ export const Greetings = () => {
           initial={{ opacity: 0, y: 20 }}
           transition={{ delay: 0.6, duration: 1 }}
         >
-          <Link href="/signin">
+          <Link href={redirectPath}>
             <Button text={t("home.consult")} />
           </Link>
         </motion.div>
