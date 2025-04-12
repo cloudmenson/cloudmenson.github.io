@@ -7,7 +7,7 @@ import Image from "next/image";
 import { Signin, Google } from "@/app/assets";
 import { useFirebaseLogin } from "@/app/hooks/useAuthWithGoogle";
 
-export default function SignUpPage() {
+export default function SignupPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -101,7 +101,10 @@ export default function SignUpPage() {
             <span>Sign up with Google</span>
           </button>
 
-          <Link className="underline flex justify-center" href="/signin">
+          <Link
+            href="/signin"
+            className="text-sm underline block text-gray-600 mt-4"
+          >
             Already have an account? Sign in
           </Link>
         </form>

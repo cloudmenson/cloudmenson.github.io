@@ -9,7 +9,7 @@ import { Google, Signin } from "@/app/assets";
 import { useEmailPasswordAuth } from "@/app/hooks/useAuth";
 import { useFirebaseLogin } from "@/app/hooks/useAuthWithGoogle";
 
-export default function SignInPage() {
+export default function SigninPage() {
   const { signInWithGoogle } = useFirebaseLogin();
   const { signInWithEmail } = useEmailPasswordAuth();
 
@@ -71,7 +71,7 @@ export default function SignInPage() {
             Sign in
           </button>
 
-          <Link href='/' className="text-sm text-blue-500 hover:underline block">
+          <Link href='/reset-password' className="text-sm text-blue-500 hover:underline block">
             Forgot your password?
           </Link>
 

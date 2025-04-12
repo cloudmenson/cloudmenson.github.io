@@ -15,7 +15,7 @@ export const PrivateSidebar = () => {
       <nav className="flex flex-col gap-4 text-white font-medium">
         <Link href="/home" className="flex items-center gap-2">
           <LayoutDashboard size={24} />
-          Dashboard
+          Home
         </Link>
 
         <Link href="/home/learning-hub" className="flex items-center gap-2">
@@ -30,7 +30,7 @@ export const PrivateSidebar = () => {
 
         <Link href="/" className="flex items-center gap-2">
           <Home size={24} />
-          Main
+          Main page
         </Link>
 
         <Link href="/home/help" className="flex items-center gap-2">
