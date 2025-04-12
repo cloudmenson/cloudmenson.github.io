@@ -41,13 +41,13 @@ export default function Home() {
         className="
           py-4
           w-full
-          text-sm
           bg-footer
           text-center
-          text-gray-600
-          text-footer-text"
+          text-white"
       >
-        <p className="text-[1vw]">© {new Date().getFullYear()} Crew Helper</p>
+        <p className="text-[3.2vw] sm:text-[2.5vw] md:text-[2vw] lg:text-[2vw] xl:text-[1.5vw] 2xl:text-[1vw]">
+          © {new Date().getFullYear()} Crew Helper
+        </p>
       </footer>
     </React.Fragment>
   );
