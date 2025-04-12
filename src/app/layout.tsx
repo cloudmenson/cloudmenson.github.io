@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { ScrollTo } from "@/app/components";
+// import { ScrollTo } from "@/app/components";
 
 import { I18nProvider } from "./providers/i18nProvider";
 import { AuthProvider } from "./providers/AuthProvider";
@@ -36,9 +36,9 @@ export default function RootLayout({
       <body>
         <I18nProvider>
           <AuthProvider>
-            <ScrollTo>
+            {/* <ScrollTo> */}
               <main>{children}</main>
-            </ScrollTo>
+            {/* </ScrollTo> */}
           </AuthProvider>
         </I18nProvider>
       </body>
