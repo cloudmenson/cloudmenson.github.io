@@ -26,11 +26,11 @@ export const FAQ = () => {
         mx-auto
         text-section-text
         max-w-[95%]
-        sm:max-w-[90%]
-        md:max-w-[90%]
-        lg:max-w-[90%]
+        sm:max-w-[95%]
+        md:max-w-[95%]
+        lg:max-w-[95%]
         xl:max-w-[90%]
-        2xl:max-w-[80%]"
+        2xl:max-w-[75%]"
     >
       <h2
         className="
@@ -75,17 +75,17 @@ export const FAQ = () => {
                   items-center
                   text-left
 
-                  px-[1.5vw]
+                  px-[3vw]
                   sm:px-[1.5vw]
                   md:[1.5vw]
-                  lg:px-[1.5vw]
+                  lg:px-[1.6vw]
                   xl:px-[1.5vw]
                   2xl:px-[1.5vw]
 
-                  py-[0.6vw]
-                  sm:py-[0.6vw]
+                  py-[1.5vw]
+                  sm:py-[1vw]
                   md:py-[0.6vw]
-                  lg:py-[0.6vw]
+                  lg:py-[0.8vw]
                   xl:py-[0.6vw]
                   2xl:py-[0.6vw]"
               >
@@ -94,7 +94,7 @@ export const FAQ = () => {
                     font-medium
                     text-[3.4vw]
                     sm:text-[2.8vw]
-                    md:text-[2vw]
+                    md:text-[2.4vw]
                     lg:text-[1.6vw]
                     xl:text-[1.4vw]
                     2xl:text-[1.2vw]"
@@ -121,13 +121,21 @@ export const FAQ = () => {
                     <div
                       className="
                         leading-relaxed                    
+                        px-[3vw]
+                        sm:px-[1.5vw]
+                        md:[1.5vw]
+                        lg:px-[1.6vw]
+                        xl:px-[1.5vw]
+                        2xl:px-[1.5vw]
+                        py-[1.5vw]
+                        sm:py-[0.8vw]
+                        md:py-[0.6vw]
+                        lg:py-[0.8vw]
+                        xl:py-[0.6vw]
+                        2xl:py-[0.6vw]
                         text-[2.8vw]
-
-                        px-[1.5vw]
-                        py-[1vw]
-
-                        sm:text-[2.4vw]
-                        md:text-[1.8vw]
+                        sm:text-[2.5vw]
+                        md:text-[2.2vw]
                         lg:text-[1.4vw]
                         xl:text-[1.2vw]
                         2xl:text-[1vw]"
