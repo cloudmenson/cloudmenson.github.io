@@ -67,7 +67,6 @@ export const Greetings = () => {
             lg:mb-[5vw]
             xl:mb-[4vw]
             2xl:mb-[4vw]
-
             text-white
             text-[4vw]
             sm:text-[3vw]

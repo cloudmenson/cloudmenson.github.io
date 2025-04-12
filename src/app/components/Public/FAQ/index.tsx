@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { questions } from "@/app/utils/mock";
+import { faq } from "@/app/utils/mock";
 
 export const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -56,7 +56,7 @@ export const FAQ = () => {
         xl:space-y-[1.2vw]
         2xl:space-y-[1vw]"
       >
-        {questions.map((item, index) => {
+        {faq.map((item, index) => {
           const isOpen = openIndex === index;
           return (
             <motion.div
