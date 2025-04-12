@@ -132,7 +132,22 @@ export const CourseCard = ({ data, duration }: ICourseCard) => {
           whileTap={{ scale: 0.98 }}
           whileHover={{ scale: 1.02 }}
           className={cn(
-            "text-sm px-4 py-2 cursor-pointer rounded-full bg-gradient-to-r text-white font-semibold hover:bg-gray-200 transition-colors",
+            `
+            text-[3.2vw]
+            sm:text-[2.5vw]
+            md:text-[2vw]
+            lg:text-[1.5vw]
+            xl:text-[1.5vw]
+            2xl:text-[1.2vw]
+            px-4
+            py-2
+            cursor-pointer
+            rounded-[10px]
+            bg-gradient-to-r
+            text-white
+            font-semibold
+            hover:bg-gray-200
+            transition-colors`,
             data.gradient
           )}
         >
