@@ -39,7 +39,7 @@ export const Header = () => {
       dark:bg-header
       shadow-sm"
     >
-      <div className="h-full w-full flex items-center justify-between px-[2.5vw]">
+      <div className="h-full w-full flex items-center justify-between px-[4vw] xl:px-[10vw]">
         <Link href="/" className="text-lg font-bold color-foreground">
           <h1 className="text-[20px]">Crew Helper</h1>
         </Link>
