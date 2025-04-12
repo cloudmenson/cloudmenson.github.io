@@ -103,9 +103,9 @@ export const FAQ = () => {
                 </span>
 
                 {isOpen ? (
-                  <Minus className="w-[20px] h-[20px]" />
+                  <Minus className="min-w-[24px] w-[24px] h-auto" />
                 ) : (
-                  <Plus className="w-[20px] h-[20px]" />
+                  <Plus className="min-w-[24px] w-[24px] h-auto" />
                 )}
               </button>
 
