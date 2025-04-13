@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { LucideIcon } from "lucide-react";
 import { cn } from "@/app/utils/tailwind-merge";
@@ -126,11 +125,13 @@ export const CourseCard = ({ data }: ICourseCard) => {
           ${data.price}
         </p>
 
-        <motion.button
+        <motion.a
+          href={redirectPath}
           whileTap={{ scale: 0.98 }}
           whileHover={{ scale: 1.02 }}
           className={cn(
             `
+            text-center
             text-[3.2vw]
             sm:text-[2.5vw]
             md:text-[2vw]
@@ -149,8 +150,8 @@ export const CourseCard = ({ data }: ICourseCard) => {
             data.gradient
           )}
         >
-          <Link href={redirectPath}>{data.buttonText}</Link>
-        </motion.button>
+          {data.buttonText}
+        </motion.a>
       </div>
     </div>
   );

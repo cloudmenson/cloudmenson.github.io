@@ -31,8 +31,7 @@ export const mentors = [
       { link: "#", icon: Inst },
       { link: "#", icon: TikTok },
     ],
-    description:
-      "",
+    description: "",
   },
   {
     name: "Pavlo",
@@ -140,28 +139,33 @@ export const courses = [
 
 export const benefits = [
   {
-    src: Benefit4,
-    title: "Тут може бути якийсь текст який описує шось",
-    subtitle: "Якщо треба тут також буде текст",
+    src: Benefit1,
+    title: "Explore the World",
+    subtitle:
+      "Wake up in Paris, fall asleep in Dubai. As a cabin crew member, the world becomes your office — and your playground. Travel has never felt this rewarding.",
   },
   {
     src: Benefit2,
-    title: "Тут може бути якийсь текст який описує шось",
-    subtitle: "Якщо треба тут також буде текст",
+    title: "Earn & Live Well",
+    subtitle:
+      "Entry-level cabin crew positions typically offer a monthly salary ranging from $1,500 to $3,000 — with additional benefits such as layover allowances, travel perks, and performance bonuses. Competitive and tax free* salary, discounts for your friends and family, and global lifestyle benefits. Get paid to see the world and build a stable future doing what you love.",
   },
   {
     src: Benefit3,
-    title: "Тут може бути якийсь текст який описує шось",
-    subtitle: "Якщо треба тут також буде текст",
+    title: "Grow Every Day",
+    subtitle:
+      "From real-life challenges to boosting your confidence and independence — a career as cabin crew helps you evolve into your best self. And the journey doesn’t stop there: rise through the ranks to become a Cabin Manager, Trainer, Instructor, or even step into leadership roles. Aviation offers an ocean of opportunities — and it all starts here.",
   },
   {
-    src: Benefit1,
-    title: "Тут може бути якийсь текст який описує шось",
-    subtitle: "Якщо треба тут також буде текст",
+    src: Benefit4,
+    title: "Build a Global Network",
+    subtitle:
+      "Connect with inspiring people from around the world. Cabin crew life introduces you to cultures, friendships, and opportunities that last a lifetime.",
   },
   {
     src: Benefit5,
-    title: "Тут може бути якийсь текст який описує шось",
-    subtitle: "Якщо треба тут також буде текст",
+    title: "Build Your Personal Brand",
+    subtitle:
+      "In today’s world, your online presence matters. As a cabin crew member, you can grow your personal brand on social media, share your journey, inspire others — and open doors to exciting opportunities beyond the skies. Stand out, stay true, and let the world see who you are.",
   },
 ];

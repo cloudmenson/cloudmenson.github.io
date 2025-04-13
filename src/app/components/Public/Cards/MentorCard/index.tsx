@@ -86,12 +86,14 @@ export const MentorCard = ({ data }: IMentorCard) => {
               rel="noopener noreferrer"
               className="hover:opacity-80"
             >
-              <Image
-                alt="Social"
-                loading="lazy"
-                src={social.icon}
-                className="w-6 h-6 sm:w-7 sm:h-7 lg:w-[1.8vw] lg:h-[1.8vw]"
-              />
+              {social.icon && (
+                <Image
+                  alt="Social"
+                  loading="lazy"
+                  src={social.icon}
+                  className="w-6 h-6 sm:w-7 sm:h-7 lg:w-[1.8vw] lg:h-[1.8vw]"
+                />
+              )}
             </a>
           </React.Fragment>
         ))}

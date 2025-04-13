@@ -1,7 +1,7 @@
 export const en = {
   home: {
-    about: `One session. Big results.
-      Get coached by pros who know what recruiters look for.`,
+    goal: "One session. Big results.",
+    about: "Get coached by pros who know what recruiters look for.",
     consult: "Get a consultation",
   },
   flippedCard: {

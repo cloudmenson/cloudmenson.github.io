@@ -11,6 +11,7 @@ import { cn } from "@/app/utils/tailwind-merge";
 import { LangSelector } from "@/app/components";
 import { menuNavigation } from "@/app/utils/mock";
 import { useAuthStore } from "@/app/store/modalStore";
+import { Logo1 } from "@/app/assets";
 
 export const Header = () => {
   const { user } = useAuthStore();
@@ -40,8 +41,11 @@ export const Header = () => {
       shadow-sm"
     >
       <div className="h-full w-full flex items-center justify-between px-[4vw] xl:px-[10vw]">
-        <Link href="/" className="text-lg font-bold color-foreground">
-          <h1 className="text-[20px]">Crew Helper</h1>
+        <Link
+          href="/"
+          className="rounded-full flex items-center justify-center w-[45px] h-[45px] bg-black shadow-md"
+        >
+          <Image src={Logo1} alt="Logo" width={40} height={40} />
         </Link>
 
         <div className="flex items-center gap-3 md:gap-6">

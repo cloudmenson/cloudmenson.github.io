@@ -5,6 +5,14 @@ import { ToastNotifications } from "@/app/components";
 
 import "./globals.css";
 
+export const metadata = {
+  title: "Crew Helper",
+  description: "",
+  // icons: {
+  //   icon: "/favicon.ico",
+  // },
+};
+
 export default function RootLayout({
   children,
 }: {

@@ -39,7 +39,7 @@ export const Benefits = () => {
           text-center
           mb-[2vw]"
         >
-          Benefits
+          Why become a cabin crew?
         </h2>
 
         <div
@@ -52,8 +52,6 @@ export const Benefits = () => {
           lg:gap-[2.5vw]
           xl:gap-[2.5vw]
           2xl:gap-[2.5vw]
-
-
           items-center
           flex-col"
         >

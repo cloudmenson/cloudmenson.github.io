@@ -16,7 +16,14 @@ import Stan from "./png/mentors/Stan.jpg";
 import TikTok from "./svg/socials/tiktok.svg";
 import Window from "./png/1.jpg";
 
+import Logo1 from "./svg/logo/CH.svg";
+import Logo2 from "./svg/logo/CH2.svg";
+import Logo3 from "./svg/logo/CH3.svg";
+
 export {
+  Logo1,
+  Logo2,
+  Logo3,
   Benefit1,
   Benefit2,
   Benefit3,

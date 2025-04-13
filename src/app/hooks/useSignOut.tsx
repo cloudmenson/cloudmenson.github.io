@@ -1,4 +1,5 @@
 import { signOut } from "firebase/auth";
+import { deleteCookie } from "cookies-next";
 
 import { auth } from "@/app/lib/firebase";
 import { notifyError } from "@/app/components";
@@ -14,6 +15,8 @@ export const useFirebaseSignOut = () => {
 
       await signOut(auth);
       useAuthStore.getState().logout();
+
+      deleteCookie("token");
     } catch (error) {
       notifyError("" + error);
     } finally {

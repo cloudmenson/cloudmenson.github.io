@@ -66,6 +66,24 @@ export const Greetings = () => {
         <motion.p
           animate={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 20 }}
+          transition={{ delay: 0.3, duration: 1 }}
+          className="
+            whitespace-pre-line
+            text-white
+            text-[4vw]
+            sm:text-[3vw]
+            md:text-[3vw] 
+            lg:text-[2.2vw]
+            xl:text-[2.2vw]
+            2xl:text-[2vw]"
+        >
+          {t("home.goal")}
+        </motion.p>
+
+        <motion.p
+          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          transition={{ delay: 0.3, duration: 1 }}
           className="
             mb-[10vw]
             sm:mb-[10vw]
@@ -73,14 +91,14 @@ export const Greetings = () => {
             lg:mb-[5vw]
             xl:mb-[4vw]
             2xl:mb-[4vw]
+            whitespace-pre-line
             text-white
             text-[4vw]
             sm:text-[3vw]
-            md:text-[3vw]
-            lg:text-[2.5vw]
-            xl:text-[2vw]
-            2xl:text-[1.6vw]"
-          transition={{ delay: 0.3, duration: 1 }}
+            md:text-[3vw] 
+            lg:text-[2.2vw]
+            xl:text-[2.2vw]
+            2xl:text-[2vw]"
         >
           {t("home.about")}
         </motion.p>

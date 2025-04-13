@@ -1,5 +1,6 @@
 "use client";
 
+import { setCookie } from "cookies-next";
 import { useRouter } from "next/navigation";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
@@ -20,6 +21,12 @@ export const useAuth = () => {
         email,
         password
       );
+
+      const token = await userCredential.user.getIdToken();
+      setCookie("token", token, {
+        path: "/",
+        maxAge: 60 * 60 * 24, // 1 день
+      });
 
       if (userCredential.user.uid === "dUBvcL9Hv7bJdoXCMcupAYwilup1") {
         router.push("/admin");

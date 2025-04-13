@@ -50,7 +50,13 @@ export const BenefitCard = ({
       />
 
       <div
-        className="flex flex-col gap-[0.5vw] items-start sm:items-center md:items-start w-full md:w-[unset]"
+        className="flex flex-col gap-[0.5vw] items-start sm:items-center md:items-start w-full md:w-[unset]          
+            w-full 
+            sm:w-[90%]
+            md:w-[60%]
+            lg:w-[45%]
+            xl:w-[20%]
+            2xl:w-[40%]"
       >
         <p
           className="
