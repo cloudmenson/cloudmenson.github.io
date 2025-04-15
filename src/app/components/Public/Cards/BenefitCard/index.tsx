@@ -1,6 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 import { cn } from "@/app/utils/tailwind-merge";
 
@@ -9,6 +8,7 @@ interface IBenefitCard {
   subtitle: string;
   className?: string;
   imageSrc: StaticImageData;
+  textWrapperClassName?: string;
 }
 
 export const BenefitCard = ({
@@ -16,6 +16,7 @@ export const BenefitCard = ({
   imageSrc,
   subtitle,
   className,
+  textWrapperClassName,
 }: IBenefitCard) => {
   return (
     <div
@@ -31,40 +32,50 @@ export const BenefitCard = ({
         className
       )}
     >
-      <motion.div
-        whileTap={{ scale: 0.98 }}
-        whileHover={{ scale: 1.03 }}
-        style={{ backgroundImage: `url(${imageSrc.src})` }}
+      <Image
+        src={imageSrc}
+        alt={title}
         className="
-            min-h-[40vw]
-            sm:min-h-[25vw]
-            w-full 
-            sm:w-[90%]
-            md:w-[60%]
-            lg:w-[45%]
-            xl:w-[50%]
-            rounded-2xl
-            shadow-lg
-            bg-cover
-            bg-center"
+        max-h-[30vw]
+        w-full 
+        sm:w-[100%]
+        md:w-[50%]
+        lg:w-[50%]
+        xl:w-[50%]
+        2xl:w-[50%]
+        rounded-2xl
+        shadow-lg
+        bg-cover
+        bg-center
+        object-cover"
       />
 
       <div
-        className="flex flex-col gap-[0.5vw] items-start sm:items-center md:items-start w-full md:w-[unset]          
-            w-full 
-            sm:w-[90%]
-            md:w-[60%]
-            lg:w-[45%]
-            xl:w-[20%]
-            2xl:w-[40%]"
+        className={
+          (cn(`
+          flex
+          flex-col
+          gap-[0.5vw]
+          items-start
+          sm:items-center
+          md:items-start
+          w-full    
+          sm:w-[100%]
+          md:w-[50%]
+          lg:w-[50%]
+          xl:w-[50%]
+          2xl:w-[50%]`),
+          textWrapperClassName)
+        }
       >
         <p
           className="
-          text-[3.5vw]
+          text-[5vw]
           sm:text-[3.2vw]
           md:text-[2.5vw]
           lg:text-[2.2vw]
-          xl:text-[1.8vw]
+          xl:text-[1.9vw]
+          2xl:text-[1.8vw]
           pb-[1vw]"
         >
           {title}
@@ -72,11 +83,12 @@ export const BenefitCard = ({
 
         <p
           className="
-          text-[3vw]
+          text-[3.2vw]
           sm:text-[2.6vw]
           md:text-[2vw]
           lg:text-[1.6vw]
-          xl:text-[1.2vw]
+          xl:text-[1.3vw]
+          2xl:text-[1.2vw]
           pb-[1vw]"
         >
           {subtitle}

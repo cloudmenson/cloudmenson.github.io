@@ -12,6 +12,9 @@ module.exports = {
         bp1440: "1440px",
         bp1680: "1680px",
       },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+      },
     },
   },
 };

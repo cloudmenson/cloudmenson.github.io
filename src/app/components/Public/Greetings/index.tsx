@@ -37,7 +37,8 @@ export const Greetings = () => {
         transition={{ duration: 1, ease: "easeOut" }}
         className="h-screen w-full bg-cover bg-center relative flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8"
       >
-        <div className="flex justify-center flex-wrap px-4">
+        <div className="flex justify-center flex-wrap gap-x-[0.4vw] gap-y-[0.8vw] px-4 sm:px-6 md:px-8 cursor-default font-poppins">
+          {" "}
           {["C", "r", "e", "w", "\u00A0", "H", "e", "l", "p", "e", "r"].map(
             (letter, i) => (
               <motion.span
@@ -68,6 +69,7 @@ export const Greetings = () => {
           initial={{ opacity: 0, y: 20 }}
           transition={{ delay: 0.3, duration: 1 }}
           className="
+            italic
             whitespace-pre-line
             text-white
             text-[4vw]
@@ -75,7 +77,7 @@ export const Greetings = () => {
             md:text-[3vw] 
             lg:text-[2.2vw]
             xl:text-[2.2vw]
-            2xl:text-[2vw]"
+            2xl:text-[2.4vw]"
         >
           {t("home.goal")}
         </motion.p>

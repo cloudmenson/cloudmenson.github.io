@@ -61,6 +61,9 @@ export const Benefits = () => {
               title={benefit.title}
               imageSrc={benefit.src}
               subtitle={benefit.subtitle}
+              textWrapperClassName={cn(
+                idx % 2 === 1 ? "text-end" : "text-start"
+              )}
               className={cn(
                 idx % 2 === 1
                   ? "md:flex-row-reverse flex-col"
