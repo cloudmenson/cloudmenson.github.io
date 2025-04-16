@@ -1,5 +1,4 @@
 "use client";
-import VisitsWidget from "@/app/components/Public/VisitsWidget/VisitsWidget";
 
 import { useState, useEffect, ChangeEvent } from "react";
 import Image from "next/image";
@@ -37,12 +36,12 @@ export default function AdminPage() {
   const [user, setUser] = useState<User | null>(null);
 
   const sections = [
-    { id: "statistics", label: "Статистика" },
     { id: "learningHub", label: "Learning Hub" },
     { id: "content1", label: "content1" },
     { id: "content2", label: "content2" },
     { id: "content3", label: "content3" },
     { id: "content4", label: "content4" },
+    { id: "statistics", label: "Статистика" },
     // add more sections here later, e.g. { id: 'blog', label: 'Blog' }
   ];
   const [activeSection, setActiveSection] = useState(sections[0].id);
@@ -347,15 +346,6 @@ export default function AdminPage() {
               </div>
             </div>
           )}
-          {activeSection === "statistics" && (
-            <div className="max-w-5xl mx-auto">
-              <h1 className="text-4xl font-bold text-center mb-8">
-                Статистика відвідувань
-              </h1>
-              <VisitsWidget />
-            </div>
-          )}
-          {/* Add other sections here */}
         </main>
       </div>
     </div>
