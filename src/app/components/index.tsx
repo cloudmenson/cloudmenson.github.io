@@ -13,7 +13,6 @@ import { Loader } from "./Public/Loader";
 import { MentorCard } from "./Public/Cards/MentorCard";
 import { notifyError, notifySuccess, ToastNotifications } from "./Public/Toast";
 import { ScrollTo } from "./Public/ScrollTo";
-import { VisitsWidget } from "./Public/VisitsWidget/VisitsWidget";
 
 export {
   AboutUs,
@@ -33,5 +32,4 @@ export {
   notifySuccess,
   ScrollTo,
   ToastNotifications,
-  VisitsWidget,
 };
