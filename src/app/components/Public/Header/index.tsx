@@ -6,12 +6,11 @@ import Image from "next/image";
 import { X, MenuIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { FlyHeader } from "@/app/assets";
+import { FlyHeader, Logo4 } from "@/app/assets";
 import { cn } from "@/app/utils/tailwind-merge";
 import { LangSelector } from "@/app/components";
 import { menuNavigation } from "@/app/utils/mock";
 import { useAuthStore } from "@/app/store/modalStore";
-import { Logo1 } from "@/app/assets";
 
 export const Header = () => {
   const { user } = useAuthStore();
@@ -29,7 +28,7 @@ export const Header = () => {
   return (
     <header
       className="
-      h-[60px]
+      h-[80px]
       sticky
       top-0
       flex
@@ -40,12 +39,12 @@ export const Header = () => {
       dark:bg-header
       shadow-sm"
     >
-      <div className="h-full w-full flex items-center justify-between px-[4vw] xl:px-[10vw]">
+      <div className="h-full w-full flex items-center justify-between px-[25px]">
         <Link
           href="/"
-          className="rounded-full flex items-center justify-center w-[45px] h-[45px] bg-black shadow-md"
+          className="flex items-center justify-center w-[140px] h-[140px]"
         >
-          <Image src={Logo1} alt="Logo" width={40} height={40} />
+          <Image src={Logo4} alt="Logo" width={140} height={140} />
         </Link>
 
         <div className="flex items-center gap-3 md:gap-6">
@@ -68,7 +67,7 @@ export const Header = () => {
               href="/signin"
               className="text-blue-600 bg-button-signin py-[5px] px-[15px] rounded text-main-text"
             >
-              Увійти
+              Sign in
             </Link>
           )}
 

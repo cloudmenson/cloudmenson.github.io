@@ -3,7 +3,9 @@ import { AuthProvider } from "./providers/AuthProvider";
 
 import { ToastNotifications } from "@/app/components";
 
-import "./globals.css";
+import { freckle, poppins, bungee, pacifico, montserrat } from "./fonts";
+
+import "./global.css";
 
 export const metadata = {
   title: "Crew Helper",
@@ -19,7 +21,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${poppins.variable} ${montserrat.variable} ${freckle.variable} ${pacifico.variable} ${bungee.variable} `}
+    >
       <body>
         <I18nProvider>
           <AuthProvider>

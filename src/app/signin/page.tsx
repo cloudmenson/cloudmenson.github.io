@@ -1,26 +1,21 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 
 import { Google, Signin } from "@/app/assets";
 import { useAuth } from "@/app/hooks/useAuth";
 import { useFirebaseLogin } from "@/app/hooks/useAuthWithGoogle";
+
+import { loginSchema } from "../validation";
 
 export default function SigninPage() {
   const { signInWithEmail } = useAuth();
   const { signInWithGoogle } = useFirebaseLogin();
 
   const { t } = useTranslation();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    await signInWithEmail(email, password);
-  };
 
   return (
     <section className="h-screen flex overflow-hidden text-black">
@@ -34,76 +29,105 @@ export default function SigninPage() {
       </div>
 
       <div className="flex-1 flex items-center justify-center bg-white">
-        <form className="max-w-[400px] w-[90%] md:w-[70%] p-6 rounded shadow space-y-6 text-center">
-          <h1 className="text-2xl font-bold mb-4">Sign in</h1>
+        <Formik
+          initialValues={{ email: "", password: "" }}
+          validationSchema={loginSchema}
+          onSubmit={async (values, { setSubmitting }) => {
+            await signInWithEmail(values.email, values.password);
+            setSubmitting(false);
+          }}
+        >
+          {({ isSubmitting }) => (
+            <Form className="max-w-[400px] w-[90%] md:w-[70%] p-6 rounded shadow space-y-6 text-center">
+              <h1 className="text-2xl font-bold mb-4">Sign in</h1>
 
-          <div className="mb-4">
-            <label className="block mb-1 font-medium text-start">Email</label>
+              <div className="mb-4">
+                <label
+                  htmlFor="email"
+                  className="block mb-1 font-medium text-start"
+                >
+                  Email
+                </label>
 
-            <input
-              required
-              type="email"
-              value={email}
-              placeholder="you@example.com"
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300"
-            />
-          </div>
+                <Field
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="you@example.com"
+                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                />
 
-          <div className="mb-6">
-            <label className="block mb-1 font-medium text-start">
-              Password
-            </label>
+                <ErrorMessage
+                  name="email"
+                  component="div"
+                  className="mt-1 text-red-600 text-sm text-left"
+                />
+              </div>
 
-            <input
-              required
-              type="password"
-              value={password}
-              placeholder="••••••••••••••"
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300"
-            />
-          </div>
+              <div className="mb-6">
+                <label
+                  htmlFor="password"
+                  className="block mb-1 font-medium text-start"
+                >
+                  Password
+                </label>
 
-          <button
-            type="submit"
-            onClick={handleSubmit}
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition cursor-pointer mb-[10px]"
-          >
-            Sign in
-          </button>
+                <Field
+                  id="password"
+                  name="password"
+                  type="password"
+                  placeholder="••••••••••••••"
+                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                />
 
-          <p className="text-gray-500 text-sm mb-[10px]">or</p>
+                <ErrorMessage
+                  name="password"
+                  component="div"
+                  className="mt-1 text-red-600 text-sm text-left"
+                />
+              </div>
 
-          <button
-            type="button"
-            onClick={signInWithGoogle}
-            className="flex items-center justify-center gap-2 border border-gray-300 rounded px-4 py-2 hover:bg-gray-100 w-full cursor-pointer"
-          >
-            <Image
-              width={20}
-              height={20}
-              src={Google}
-              alt="Google"
-              loading="lazy"
-            />
-            <span>Sign in with Google</span>
-          </button>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition mb-[10px] cursor-pointer"
+              >
+                {isSubmitting ? "Signing in..." : "Sign in"}
+              </button>
 
-          <Link
-            href="/reset-password"
-            className="text-sm text-blue-500 hover:underline block text-end"
-          >
-            Forgot your password?
-          </Link>
+              <p className="text-gray-500 text-sm mb-[10px]">or</p>
 
-          <Link
-            className="underline block text-sm text-gray-600 mt-4"
-            href="/signup"
-          >
-            {t("Don't have an account?")}
-          </Link>
-        </form>
+              <button
+                type="button"
+                onClick={signInWithGoogle}
+                className="flex items-center justify-center gap-2 border border-gray-300 rounded px-4 py-2 hover:bg-gray-100 w-full cursor-pointer"
+              >
+                <Image
+                  width={20}
+                  height={20}
+                  src={Google}
+                  alt="Google"
+                  loading="lazy"
+                />
+                <span>Sign in with Google</span>
+              </button>
+
+              <Link
+                href="/reset-password"
+                className="text-sm text-blue-500 hover:underline block text-end cursor-pointer"
+              >
+                Forgot your password?
+              </Link>
+
+              <Link
+                className="block text-sm text-gray-600 mt-4 cursor-pointer"
+                href="/signup"
+              >
+                {t("Don't have an account?")}
+              </Link>
+            </Form>
+          )}
+        </Formik>
       </div>
     </section>
   );

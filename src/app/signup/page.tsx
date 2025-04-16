@@ -1,25 +1,18 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 
 import { Signin, Google } from "@/app/assets";
 import { useSignUp } from "@/app/hooks/useSignUp";
 import { useFirebaseLogin } from "@/app/hooks/useAuthWithGoogle";
 
-export default function SignupPage() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+import { registrationSchema } from "../validation";
 
+export default function SignupPage() {
   const { signInWithGoogle } = useFirebaseLogin();
   const { signUpWithEmail } = useSignUp();
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    await signUpWithEmail(name, email, password);
-  };
 
   return (
     <main className="h-screen flex overflow-hidden text-black">
@@ -33,84 +26,115 @@ export default function SignupPage() {
       </div>
 
       <div className="flex-1 flex items-center justify-center bg-white">
-        <form
-          onSubmit={handleSubmit}
-          className="max-w-[400px] w-[90%] md:w-[70%] p-6 rounded shadow space-y-6 text-center"
+        <Formik
+          initialValues={{ name: "", email: "", password: "" }}
+          validationSchema={registrationSchema}
+          onSubmit={async (values, { setSubmitting }) => {
+            await signUpWithEmail(values.name, values.email, values.password);
+            setSubmitting(false);
+          }}
         >
-          <h1 className="text-2xl font-bold mb-4 text-center">Sign up</h1>
+          {({ isSubmitting }) => (
+            <Form className="max-w-[400px] w-[90%] md:w-[70%] p-6 rounded shadow space-y-6 text-center">
+              <h1 className="text-2xl font-bold mb-4 text-center">Sign up</h1>
 
-          <div className="mb-4">
-            <label className="block mb-1 font-medium text-start">Name</label>
+              <div className="mb-4">
+                <label
+                  htmlFor="name"
+                  className="block mb-1 font-medium text-start"
+                >
+                  Name
+                </label>
+                <Field
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
+                  className="w-full border border-gray-300 rounded px-3 py-2"
+                />
+                <ErrorMessage
+                  name="name"
+                  component="div"
+                  className="mt-1 text-red-600 text-sm text-left"
+                />
+              </div>
 
-            <input
-              required
-              type="text"
-              value={name}
-              placeholder="Your name"
-              onChange={(e) => setName(e.target.value)}
-              className="w-full border border-gray-300 rounded px-3 py-2"
-            />
-          </div>
+              <div className="mb-4">
+                <label
+                  htmlFor="email"
+                  className="block mb-1 font-medium text-start"
+                >
+                  Email
+                </label>
+                <Field
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="you@example.com"
+                  className="w-full border border-gray-300 rounded px-3 py-2"
+                />
+                <ErrorMessage
+                  name="email"
+                  component="div"
+                  className="mt-1 text-red-600 text-sm text-left"
+                />
+              </div>
 
-          <div className="mb-4">
-            <label className="block mb-1 font-medium text-start">Email</label>
+              <div className="mb-6">
+                <label
+                  htmlFor="password"
+                  className="block mb-1 font-medium text-start"
+                >
+                  Password
+                </label>
+                <Field
+                  id="password"
+                  name="password"
+                  type="password"
+                  placeholder="•••••••"
+                  className="w-full border border-gray-300 rounded px-3 py-2"
+                />
+                <ErrorMessage
+                  name="password"
+                  component="div"
+                  className="mt-1 text-red-600 text-sm text-left"
+                />
+              </div>
 
-            <input
-              required
-              type="email"
-              value={email}
-              placeholder="you@example.com"
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full border border-gray-300 rounded px-3 py-2"
-            />
-          </div>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition mb-[10px]"
+              >
+                {isSubmitting ? "Signing up..." : "Sign up"}
+              </button>
 
-          <div className="mb-6">
-            <label className="block mb-1 font-medium text-start">
-              Password
-            </label>
+              <p className="text-gray-500 text-sm mb-[10px]">or</p>
 
-            <input
-              required
-              type="password"
-              value={password}
-              placeholder="•••••••"
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full border border-gray-300 rounded px-3 py-2"
-            />
-          </div>
+              <button
+                type="button"
+                onClick={signInWithGoogle}
+                className="flex items-center justify-center gap-2 border border-gray-300 rounded px-4 py-2 hover:bg-gray-100 w-full cursor-pointer"
+              >
+                <Image
+                  width={20}
+                  height={20}
+                  src={Google}
+                  alt="Google"
+                  loading="lazy"
+                />
+                <span>Sign up with Google</span>
+              </button>
 
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition cursor-pointer mb-[10px]"
-          >
-            Sign up
-          </button>
-
-          <p className="text-gray-500 text-sm mb-[10px]">or</p>
-
-          <button
-            type="button"
-            onClick={signInWithGoogle}
-            className="flex items-center justify-center gap-2 border border-gray-300 rounded px-4 py-2 hover:bg-gray-100 w-full cursor-pointer"
-          >
-            <Image
-              width={20}
-              height={20}
-              src={Google}
-              alt="Google"
-              loading="lazy"
-            />
-            <span>Sign up with Google</span>
-          </button>
-
-          <Link
-            href="/signin"
-            className="text-sm underline block text-gray-600 mt-4"
-          >
-            Already have an account? Sign in
-          </Link>
-        </form>
+              <Link href="/signin" className="text-sm block text-gray-600 mt-4">
+                Already have an account?
+                <span className="ml-[0.5vw] text-blue-600 hover:underline">
+                  Sign in
+                </span>
+              </Link>
+            </Form>
+          )}
+        </Formik>
       </div>
     </main>
   );

@@ -37,8 +37,7 @@ export const Greetings = () => {
         transition={{ duration: 1, ease: "easeOut" }}
         className="h-screen w-full bg-cover bg-center relative flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8"
       >
-        <div className="flex justify-center flex-wrap gap-x-[0.4vw] gap-y-[0.8vw] px-4 sm:px-6 md:px-8 cursor-default font-poppins">
-          {" "}
+        <div className="flex justify-center flex-wrap gap-x-[0.4vw] gap-y-[0.8vw] px-4 sm:px-6 md:px-8 cursor-default">
           {["C", "r", "e", "w", "\u00A0", "H", "e", "l", "p", "e", "r"].map(
             (letter, i) => (
               <motion.span
@@ -48,9 +47,8 @@ export const Greetings = () => {
                 whileHover={{ y: -10 }}
                 transition={{ type: "spring", stiffness: 300 }}
                 className="
-                  mb-[2vw]
                   text-white
-                  font-bold
+                  font-semibold
                   text-[12vw]
                   sm:text-[8vw]
                   md:text-[8vw]
@@ -65,11 +63,13 @@ export const Greetings = () => {
         </div>
 
         <motion.p
+          // style={{ fontFamily: "var(--font-pacifico)" }}
           animate={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 20 }}
           transition={{ delay: 0.3, duration: 1 }}
           className="
-            italic
+            underline
+            mb-[2vw]
             whitespace-pre-line
             text-white
             text-[4vw]
